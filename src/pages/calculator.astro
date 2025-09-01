@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Calculator from '../components/Calculator.astro';
+import CalculatorComponent from '../components/Calculator.astro';
 ---
 
 <Layout 
@@ -33,7 +33,7 @@ import Calculator from '../components/Calculator.astro';
     </div>
   </section>
 
-  <Calculator />
+  <CalculatorComponent />
 
   <!-- Advanced Planning Tools -->
   <section class="section-padding bg-dark-900/50">
@@ -132,7 +132,7 @@ import Calculator from '../components/Calculator.astro';
             
             <div>
               <label class="block text-sm font-medium text-gray-300 mb-2">Monthly Income ($)</label>
-              <input type="number" id="monthlyIncome" value="15000" class="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-lg text-white focus:border-accent-500 focus:ring-2 focus:ring-accent-500/20 transition-all duration-300">
+              <input type="number" id="monthlyIncomeCalc" value="15000" class="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-lg text-white focus:border-accent-500 focus:ring-2 focus:ring-accent-500/20 transition-all duration-300">
             </div>
             
             <button onclick="calculateNetWorth()" class="btn-accent w-full py-4 text-lg">
@@ -198,25 +198,23 @@ import Calculator from '../components/Calculator.astro';
     const rrsp = parseFloat(document.getElementById('rrspContribution').value);
     const investmentIncome = parseFloat(document.getElementById('investmentIncome').value);
     
-    // Simplified tax calculation (BC rates as example)
     const taxableIncome = income - rrsp;
     const federalTax = calculateFederalTax(taxableIncome);
     const provincialTax = calculateProvincialTax(taxableIncome, province);
-    const investmentTax = investmentIncome * 0.25; // Simplified capital gains
+    const investmentTax = investmentIncome * 0.25;
     
     const currentTax = federalTax + provincialTax + investmentTax;
-    const optimizedTax = currentTax * 0.73; // 27% reduction through optimization
+    const optimizedTax = currentTax * 0.73;
     const savings = currentTax - optimizedTax;
     
-    document.getElementById('currentTax').textContent = ' + currentTax.toLocaleString('en-US', {maximumFractionDigits: 0});
-    document.getElementById('optimizedTax').textContent = ' + optimizedTax.toLocaleString('en-US', {maximumFractionDigits: 0});
-    document.getElementById('taxSavings').textContent = ' + savings.toLocaleString('en-US', {maximumFractionDigits: 0});
+    document.getElementById('currentTax').textContent = '$' + currentTax.toLocaleString('en-US', {maximumFractionDigits: 0});
+    document.getElementById('optimizedTax').textContent = '$' + optimizedTax.toLocaleString('en-US', {maximumFractionDigits: 0});
+    document.getElementById('taxSavings').textContent = '$' + savings.toLocaleString('en-US', {maximumFractionDigits: 0});
     
     document.getElementById('taxResult').classList.remove('hidden');
   }
   
   function calculateFederalTax(income) {
-    // Simplified federal tax brackets
     if (income <= 50197) return income * 0.15;
     if (income <= 100392) return 7529.55 + (income - 50197) * 0.205;
     if (income <= 155625) return 17819.53 + (income - 100392) * 0.26;
@@ -225,7 +223,6 @@ import Calculator from '../components/Calculator.astro';
   }
   
   function calculateProvincialTax(income, province) {
-    // Simplified BC provincial tax
     if (province === 'BC') {
       if (income <= 43070) return income * 0.0506;
       if (income <= 86141) return 2179.34 + (income - 43070) * 0.077;
@@ -233,13 +230,13 @@ import Calculator from '../components/Calculator.astro';
       if (income <= 120094) return 6838.61 + (income - 98901) * 0.1229;
       return 9440.70 + (income - 120094) * 0.147;
     }
-    return income * 0.1; // Simplified for other provinces
+    return income * 0.1;
   }
   
   function calculateNetWorth() {
     const assets = parseFloat(document.getElementById('totalAssets').value);
     const liabilities = parseFloat(document.getElementById('totalLiabilities').value);
-    const monthlyIncomeVal = parseFloat(document.getElementById('monthlyIncome').value);
+    const monthlyIncomeVal = parseFloat(document.getElementById('monthlyIncomeCalc').value);
     
     const netWorth = assets - liabilities;
     const debtRatio = (liabilities / assets * 100);
@@ -261,7 +258,7 @@ import Calculator from '../components/Calculator.astro';
       healthColor = 'text-red-400';
     }
     
-    document.getElementById('netWorthAmount').textContent = ' + netWorth.toLocaleString('en-US', {maximumFractionDigits: 0});
+    document.getElementById('netWorthAmount').textContent = '$' + netWorth.toLocaleString('en-US', {maximumFractionDigits: 0});
     document.getElementById('debtRatio').textContent = debtRatio.toFixed(1) + '%';
     document.getElementById('financialHealth').textContent = healthStatus;
     document.getElementById('financialHealth').className = 'font-bold ' + healthColor;
