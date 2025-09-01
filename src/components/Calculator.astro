@@ -171,7 +171,7 @@
   </div>
 </section>
 
-<script>
+<script is:inline>
   function calculateRetirement() {
     const currentAge = parseInt(document.getElementById('currentAge').value);
     const retirementAge = parseInt(document.getElementById('retirementAge').value);
@@ -193,8 +193,8 @@
     const monthlyIncome = totalAmount * 0.04 / 12; // 4% withdrawal rule
     const incomeYears = totalAmount / (monthlyIncome * 12);
     
-    document.getElementById('totalAmount').textContent = ' + totalAmount.toLocaleString('en-US', {maximumFractionDigits: 0});
-    document.getElementById('monthlyIncome').textContent = ' + monthlyIncome.toLocaleString('en-US', {maximumFractionDigits: 0});
+    document.getElementById('totalAmount').textContent = '$' + totalAmount.toLocaleString('en-US', {maximumFractionDigits: 0});
+    document.getElementById('monthlyIncome').textContent = '$' + monthlyIncome.toLocaleString('en-US', {maximumFractionDigits: 0});
     document.getElementById('incomeYears').textContent = Math.round(incomeYears) + ' years';
     
     document.getElementById('retirementResult').classList.remove('hidden');
@@ -216,9 +216,9 @@
     const totalContributions = initialInvestment + (annualContribution * investmentPeriod);
     const investmentGains = futureValue - totalContributions;
     
-    document.getElementById('futureValue').textContent = ' + futureValue.toLocaleString('en-US', {maximumFractionDigits: 0});
-    document.getElementById('totalContributions').textContent = ' + totalContributions.toLocaleString('en-US', {maximumFractionDigits: 0});
-    document.getElementById('investmentGains').textContent = ' + investmentGains.toLocaleString('en-US', {maximumFractionDigits: 0});
+    document.getElementById('futureValue').textContent = '$' + futureValue.toLocaleString('en-US', {maximumFractionDigits: 0});
+    document.getElementById('totalContributions').textContent = '$' + totalContributions.toLocaleString('en-US', {maximumFractionDigits: 0});
+    document.getElementById('investmentGains').textContent = '$' + investmentGains.toLocaleString('en-US', {maximumFractionDigits: 0});
     
     document.getElementById('investmentResult').classList.remove('hidden');
   }
