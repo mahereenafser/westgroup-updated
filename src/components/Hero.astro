@@ -1,0 +1,143 @@
+---
+// Hero component for homepage
+---
+
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+  <!-- Animated Background Elements -->
+  <div class="absolute inset-0 -z-10">
+    <div class="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-primary-500/10 to-accent-500/10 rounded-full blur-3xl animate-float"></div>
+    <div class="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-r from-accent-500/10 to-primary-500/10 rounded-full blur-3xl animate-float" style="animation-delay: -2s;"></div>
+    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-primary-400/5 rounded-full blur-3xl animate-float" style="animation-delay: -4s;"></div>
+  </div>
+
+  <div class="container-custom mx-auto px-4 sm:px-6 lg:px-8 pt-20">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      <!-- Left Content -->
+      <div class="text-center lg:text-left">
+        <div class="mb-6">
+          <span class="inline-block px-4 py-2 bg-gradient-to-r from-primary-500/20 to-accent-500/20 rounded-full text-sm font-medium text-primary-300 border border-primary-500/30 animate-fade-in">
+            Fee-Only Fiduciary Advisors
+          </span>
+        </div>
+        
+        <h1 class="text-5xl lg:text-7xl font-bold mb-6 leading-tight animate-slide-up">
+          <span class="text-white">Build Wealth</span><br>
+          <span class="gradient-text">Beyond Limits</span>
+        </h1>
+        
+        <p class="text-xl lg:text-2xl text-gray-300 mb-8 leading-relaxed animate-slide-up" style="animation-delay: 0.2s;">
+          Comprehensive financial planning and tax-efficient investment strategies for high-net-worth individuals and families across British Columbia.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 mb-12 animate-slide-up" style="animation-delay: 0.4s;">
+          <a href="/contact" class="btn-primary text-lg px-8 py-4 inline-flex items-center justify-center">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+            </svg>
+            Schedule Free Consultation
+          </a>
+          <a href="/calculator" class="btn-secondary text-lg px-8 py-4 inline-flex items-center justify-center">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+            </svg>
+            Financial Calculator
+          </a>
+        </div>
+
+        <!-- Key Stats -->
+        <div class="grid grid-cols-2 lg:grid-cols-3 gap-6 animate-slide-up" style="animation-delay: 0.6s;">
+          <div class="text-center lg:text-left">
+            <div class="text-3xl lg:text-4xl font-bold gradient-text">$500M+</div>
+            <div class="text-gray-400 text-sm">Assets Under Management</div>
+          </div>
+          <div class="text-center lg:text-left">
+            <div class="text-3xl lg:text-4xl font-bold gradient-text">25+</div>
+            <div class="text-gray-400 text-sm">Years Experience</div>
+          </div>
+          <div class="text-center lg:text-left col-span-2 lg:col-span-1">
+            <div class="text-3xl lg:text-4xl font-bold gradient-text">1000+</div>
+            <div class="text-gray-400 text-sm">Satisfied Clients</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Content - Interactive Visual -->
+      <div class="relative lg:ml-12 animate-slide-in-right">
+        <div class="relative">
+          <!-- Main Card -->
+          <div class="glass-effect rounded-2xl p-8 glow-effect">
+            <div class="flex items-center justify-between mb-6">
+              <h3 class="text-xl font-semibold text-white">Portfolio Performance</h3>
+              <div class="flex items-center space-x-2">
+                <div class="w-3 h-3 bg-accent-500 rounded-full animate-pulse"></div>
+                <span class="text-sm text-gray-400">Live</span>
+              </div>
+            </div>
+            
+            <!-- Mock Chart -->
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <span class="text-gray-300">Total Return</span>
+                <span class="text-accent-400 font-bold text-lg">+12.4%</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-gray-300">YTD Performance</span>
+                <span class="text-accent-400 font-bold text-lg">+8.7%</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-gray-300">Risk-Adjusted Return</span>
+                <span class="text-accent-400 font-bold text-lg">+15.2%</span>
+              </div>
+              
+              <!-- Visual Chart Representation -->
+              <div class="mt-6">
+                <div class="flex items-end space-x-2 h-24">
+                  <div class="bg-gradient-to-t from-primary-600 to-primary-400 w-8 rounded-t opacity-80" style="height: 60%;"></div>
+                  <div class="bg-gradient-to-t from-accent-600 to-accent-400 w-8 rounded-t opacity-90" style="height: 75%;"></div>
+                  <div class="bg-gradient-to-t from-primary-600 to-primary-400 w-8 rounded-t opacity-70" style="height: 45%;"></div>
+                  <div class="bg-gradient-to-t from-accent-600 to-accent-400 w-8 rounded-t opacity-95" style="height: 85%;"></div>
+                  <div class="bg-gradient-to-t from-primary-600 to-primary-400 w-8 rounded-t opacity-85" style="height: 70%;"></div>
+                  <div class="bg-gradient-to-t from-accent-600 to-accent-400 w-8 rounded-t opacity-100" style="height: 95%;"></div>
+                  <div class="bg-gradient-to-t from-primary-600 to-primary-400 w-8 rounded-t opacity-90" style="height: 80%;"></div>
+                </div>
+                <div class="flex justify-between text-xs text-gray-500 mt-2">
+                  <span>Jan</span>
+                  <span>Mar</span>
+                  <span>May</span>
+                  <span>Jul</span>
+                  <span>Sep</span>
+                  <span>Nov</span>
+                  <span>Dec</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating Elements -->
+          <div class="absolute -top-6 -right-6 glass-effect rounded-xl p-4 animate-float" style="animation-delay: -1s;">
+            <div class="flex items-center space-x-2">
+              <div class="w-3 h-3 bg-accent-500 rounded-full"></div>
+              <span class="text-sm font-medium text-white">Tax Optimized</span>
+            </div>
+          </div>
+          
+          <div class="absolute -bottom-4 -left-6 glass-effect rounded-xl p-4 animate-float" style="animation-delay: -3s;">
+            <div class="flex items-center space-x-2">
+              <div class="w-3 h-3 bg-primary-500 rounded-full"></div>
+              <span class="text-sm font-medium text-white">Fee-Only</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <a href="#services" class="text-primary-400 hover:text-primary-300 transition-colors duration-300">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
