@@ -54,22 +54,7 @@ Allow: /
 User-agent: DuckDuckBot
 Allow: /
 
-User-agent: Baiduspider
-Allow: /
-
-User-agent: YandexBot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: LinkedInBot
-Allow: /
-
-# Block unwanted bots
+# Block unwanted crawlers
 User-agent: AhrefsBot
 Disallow: /
 
@@ -82,19 +67,13 @@ Disallow: /
 User-agent: DotBot
 Disallow: /
 
-User-agent: spbot
-Disallow: /
-
-User-agent: MegaIndex
-Disallow: /
-
 # Crawl delay for aggressive crawlers
 User-agent: *
 Crawl-delay: 1
 
-# Sitemap location
+# Sitemap locations
 Sitemap: https://westgroupfinancial.com/sitemap.xml
 Sitemap: https://westgroupfinancial.com/sitemap-index.xml
 
-# Host directive (helps with canonical domain)
+# Host directive
 Host: https://westgroupfinancial.com
