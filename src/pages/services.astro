@@ -1,135 +1,80 @@
-
 ---
 import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout 
-  title="Financial Planning Services - WestGroup Financial Management"
-  description="Comprehensive fee-only financial planning services including wealth management, retirement planning, tax-efficient investment strategies, estate planning, and business succession planning for high-net-worth individuals in BC."
-  keywords="wealth management services, retirement income planning, tax-efficient investment strategies, estate planning strategies, business succession planning, comprehensive financial planning, investment portfolio management, financial planning for entrepreneurs, fee-only financial advisor BC"
+  title="Financial Planning Services - WestGroup Financial | Fee-Only Fiduciary Advisors BC"
+  description="Comprehensive fee-only financial planning services including wealth management, retirement planning, tax-efficient investment strategies, estate planning, and business succession planning for high-net-worth individuals in British Columbia."
+  canonical="https://westgroupfinancial.com/services/"
 >
   <!-- Hero Section -->
   <section class="relative min-h-[80vh] flex items-center justify-center pt-20">
     <div class="absolute inset-0 -z-10">
-      <div class="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-primary-500/10 to-accent-500/10 rounded-full blur-3xl animate-float"></div>
-      <div class="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-r from-accent-500/10 to-primary-500/10 rounded-full blur-3xl animate-float" style="animation-delay: -2s;"></div>
+      <div class="absolute top-20 left-10 w-72 h-72 bg-yellow-400/5 rounded-full blur-3xl animate-pulse"></div>
+      <div class="absolute bottom-20 right-10 w-96 h-96 bg-green-400/5 rounded-full blur-3xl animate-pulse" style="animation-delay: -2s;"></div>
     </div>
 
-    <div class="container-custom mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <div class="observe-scroll">
-        <h1 class="text-5xl lg:text-7xl font-bold mb-6 leading-tight">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="fade-in">
+        <h1 class="text-5xl lg:text-7xl font-bold mb-6 leading-tight font-['Playfair_Display']">
           <span class="text-white">Comprehensive</span><br>
-          <span class="gradient-text">Financial Services</span>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-green-400">Financial Services</span>
         </h1>
         <p class="text-xl lg:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
           As your fee-only fiduciary advisors, we provide transparent, conflict-free financial planning 
           with specialized expertise in tax-efficient strategies for high-net-worth individuals and families.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/contact" class="btn-primary text-lg px-8 py-4">Schedule Consultation</a>
-          <a href="/calculator" class="btn-secondary text-lg px-8 py-4">Try Our Calculator</a>
+          <a href="/contact" class="bg-gradient-to-r from-yellow-400 to-green-400 text-slate-900 px-8 py-4 rounded-lg font-semibold hover:shadow-lg hover:shadow-yellow-400/25 transition-all duration-300 transform hover:scale-105">
+            Schedule Consultation
+          </a>
+          <a href="/calculator" class="border border-yellow-400 text-yellow-400 px-8 py-4 rounded-lg font-semibold hover:bg-yellow-400 hover:text-slate-900 transition-all duration-300">
+            Try Our Calculator
+          </a>
         </div>
-      <div class="text-center p-6 bg-gradient-to-r from-primary-500/10 to-accent-500/10 border border-primary-500/30 rounded-lg">
+      </div>
+    </div>
+  </section>
+
+  <!-- Results Section -->
+  <section class="py-20 bg-slate-800/30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center p-8 bg-gradient-to-r from-yellow-400/10 to-green-400/10 border border-yellow-400/30 rounded-2xl fade-in">
         <div class="text-center mb-6">
-          <div class="text-4xl font-bold gradient-text mb-2">$47,000</div>
+          <div class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-green-400 mb-2">$47,000</div>
           <p class="text-lg text-gray-300 font-medium">Average annual tax savings per client</p>
         </div>
         
         <div class="grid grid-cols-2 gap-4 mb-6">
           <div class="text-center p-4 bg-gray-800/50 rounded-lg">
-            <div class="text-2xl font-bold text-primary-400 mb-1">23%</div>
+            <div class="text-2xl font-bold text-yellow-400 mb-1">23%</div>
             <div class="text-sm text-gray-400">Average Tax Rate Reduction</div>
           </div>
           <div class="text-center p-4 bg-gray-800/50 rounded-lg">
-            <div class="text-2xl font-bold text-accent-400 mb-1">18</div>
+            <div class="text-2xl font-bold text-green-400 mb-1">18</div>
             <div class="text-sm text-gray-400">Strategies Implemented</div>
           </div>
         </div>
         
-        <div class="text-center p-4 bg-gradient-to-r from-primary-500/10 to-accent-500/10 rounded-lg border border-primary-500/30">
+        <div class="text-center p-4 bg-gradient-to-r from-yellow-400/10 to-green-400/10 rounded-lg border border-yellow-400/30">
           <div class="text-lg font-semibold text-white">ROI on Planning Fees</div>
-          <div class="text-3xl font-bold gradient-text">847%</div>
+          <div class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-green-400">847%</div>
         </div>
         
-        <!-- Fixed results text styling -->
         <p class="text-center text-gray-400 mt-6 text-base font-medium bg-gray-800/30 rounded-lg p-3">
           Results based on 3-year average client performance
         </p>
       </div>
-
-      <!-- Our Process Section - Fixed Proportions -->
-      <div class="mt-20">
-        <div class="text-center mb-16 observe-scroll">
-          <h2 class="text-4xl font-bold text-white mb-6">Our Process</h2>
-          <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            A systematic approach to comprehensive financial planning that puts your goals at the center of everything we do.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
-          <!-- Process Step 1 -->
-          <div class="text-center observe-scroll group relative">
-            <div class="relative mb-6">
-              <div class="w-20 h-20 mx-auto bg-gradient-to-r from-primary-500 to-accent-500 rounded-full flex items-center justify-center group-hover:animate-pulse z-10 relative">
-                <span class="text-2xl font-bold text-black">1</span>
-              </div>
-              <!-- Connecting line (hidden on mobile, shown on lg+) -->
-              <div class="absolute top-10 left-1/2 w-full h-0.5 bg-gradient-to-r from-primary-500 to-accent-500 hidden lg:block transform translate-x-1/2"></div>
-            </div>
-            <h3 class="text-xl font-semibold text-white mb-3">Discovery & Analysis</h3>
-            <p class="text-gray-300 text-sm leading-relaxed">
-              Comprehensive review of your current financial situation, goals, and risk tolerance.
-            </p>
-          </div>
-
-          <!-- Process Step 2 -->
-          <div class="text-center observe-scroll group relative">
-            <div class="relative mb-6">
-              <div class="w-20 h-20 mx-auto bg-gradient-to-r from-accent-600 to-primary-600 rounded-full flex items-center justify-center group-hover:animate-pulse z-10 relative">
-                <span class="text-2xl font-bold text-white">2</span>
-              </div>
-              <div class="absolute top-10 left-1/2 w-full h-0.5 bg-gradient-to-r from-accent-500 to-primary-500 hidden lg:block transform translate-x-1/2"></div>
-            </div>
-            <h3 class="text-xl font-semibold text-white mb-3">Strategy Development</h3>
-            <p class="text-gray-300 text-sm leading-relaxed">
-              Custom financial strategy design based on your unique circumstances and objectives.
-            </p>
-          </div>
-
-          <!-- Process Step 3 -->
-          <div class="text-center observe-scroll group relative">
-            <div class="relative mb-6">
-              <div class="w-20 h-20 mx-auto bg-gradient-to-r from-primary-600 to-accent-600 rounded-full flex items-center justify-center group-hover:animate-pulse z-10 relative">
-                <span class="text-2xl font-bold text-white">3</span>
-              </div>
-              <div class="absolute top-10 left-1/2 w-full h-0.5 bg-gradient-to-r from-primary-500 to-accent-500 hidden lg:block transform translate-x-1/2"></div>
-            </div>
-            <h3 class="text-xl font-semibold text-white mb-3">Implementation</h3>
-            <p class="text-gray-300 text-sm leading-relaxed">
-              Systematic implementation of your financial plan with careful attention to tax efficiency.
-            </p>
-          </div>
-
-          <!-- Process Step 4 -->
-          <div class="text-center observe-scroll group">
-            <div class="w-20 h-20 mx-auto bg-gradient-to-r from-accent-500 to-primary-500 rounded-full flex items-center justify-center mb-6 group-hover:animate-pulse">
-              <span class="text-2xl font-bold text-white">4</span>
-            </div>
-            <h3 class="text-xl font-semibold text-white mb-3">Ongoing Management</h3>
-            <p class="text-gray-300 text-sm leading-relaxed">
-              Continuous monitoring, rebalancing, and strategy adjustments as your life evolves.
-            </p>
-          </div>
-        </div>
-      </div>
+    </div>
+  </section>
 
   <!-- Services Overview -->
-  <section class="section-padding bg-dark-900/50">
-    <div class="container-custom mx-auto">
-      <div class="text-center mb-16 observe-scroll">
-        <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 fade-in">
+        <h2 class="text-4xl lg:text-5xl font-bold mb-6 font-['Playfair_Display']">
           <span class="text-white">Our</span>
-          <span class="gradient-text"> Services</span>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-green-400"> Services</span>
         </h2>
         <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
           We provide comprehensive financial planning services tailored to high-net-worth individuals and families.
@@ -137,146 +82,177 @@ import Layout from '../layouts/Layout.astro';
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Service 1 -->
-        <div class="card observe-scroll group hover:scale-105 transition-transform duration-300">
+        <!-- Service 1: Wealth Management -->
+        <div class="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 hover:border-yellow-400/30 transition-all duration-500 hover:shadow-2xl hover:shadow-yellow-400/10 hover-lift fade-in stagger-1">
           <div class="flex items-center mb-4">
-            <div class="p-3 bg-gradient-to-r from-primary-500 to-primary-400 rounded-lg mr-4 group-hover:animate-pulse">
-              <svg class="w-8 h-8 text-dark-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="p-3 bg-gradient-to-r from-yellow-400 to-green-400 rounded-lg mr-4">
+              <svg class="w-8 h-8 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
               </svg>
             </div>
-            <h3 class="text-xl font-semibold text-white">Wealth Management</h3>
+            <h3 class="text-xl font-semibold text-white font-['Playfair_Display']">Wealth Management</h3>
           </div>
           <p class="text-gray-300 mb-4 leading-relaxed">
             Sophisticated investment portfolio management with tax-efficient strategies designed to preserve and grow your wealth across market cycles.
           </p>
           <ul class="text-sm text-gray-400 space-y-2 mb-6">
-            <li class="flex items-center"><span class="w-1.5 h-1.5 bg-accent-400 rounded-full mr-2"></span>Portfolio diversification and rebalancing</li>
-            <li class="flex items-center"><span class="w-1.5 h-1.5 bg-accent-400 rounded-full mr-2"></span>Tax-loss harvesting strategies</li>
-            <li class="flex items-center"><span class="w-1.5 h-1.5 bg-accent-400 rounded-full mr-2"></span>Risk management and asset protection</li>
+            <li class="flex items-center"><span class="w-1.5 h-1.5 bg-green-400 rounded-full mr-2"></span>Trust structure optimization</li>
+            <li class="flex items-center"><span class="w-1.5 h-1.5 bg-green-400 rounded-full mr-2"></span>Estate tax minimization</li>
+            <li class="flex items-center"><span class="w-1.5 h-1.5 bg-green-400 rounded-full mr-2"></span>Charitable giving strategies</li>
           </ul>
+          <a href="/contact" class="text-green-400 hover:text-green-300 font-medium transition-colors duration-200">Learn More →</a>
         </div>
 
-        <!-- Service 2 -->
-        <div class="card observe-scroll group hover:scale-105 transition-transform duration-300">
+        <!-- Service 5: Business Succession -->
+        <div class="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 hover:border-yellow-400/30 transition-all duration-500 hover:shadow-2xl hover:shadow-yellow-400/10 hover-lift fade-in stagger-5">
           <div class="flex items-center mb-4">
-            <div class="p-3 bg-gradient-to-r from-accent-600 to-accent-500 rounded-lg mr-4 group-hover:animate-pulse">
-              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+            <div class="p-3 bg-gradient-to-r from-yellow-400 to-green-400 rounded-lg mr-4">
+              <svg class="w-8 h-8 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0H8m8 0v2a2 2 0 002 2h2a2 2 0 002 2V6z"></path>
               </svg>
             </div>
-            <h3 class="text-xl font-semibold text-white">Retirement Planning</h3>
-          </div>
-          <p class="text-gray-300 mb-4 leading-relaxed">
-            Strategic retirement planning to ensure you maintain your lifestyle while minimizing tax burden throughout your retirement years.
-          </p>
-          <ul class="text-sm text-gray-400 space-y-2 mb-6">
-            <li class="flex items-center"><span class="w-1.5 h-1.5 bg-accent-400 rounded-full mr-2"></span>RRSP/RRIF optimization</li>
-            <li class="flex items-center"><span class="w-1.5 h-1.5 bg-accent-400 rounded-full mr-2"></span>Pension maximization</li>
-            <li class="flex items-center"><span class="w-1.5 h-1.5 bg-accent-400 rounded-full mr-2"></span>Healthcare planning</li>
-          </ul>
-        </div>
-
-        <!-- Service 3 -->
-        <div class="card observe-scroll group hover:scale-105 transition-transform duration-300">
-          <div class="flex items-center mb-4">
-            <div class="p-3 bg-gradient-to-r from-primary-600 to-accent-600 rounded-lg mr-4 group-hover:animate-pulse">
-              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
-              </svg>
-            </div>
-            <h3 class="text-xl font-semibold text-white">Tax Planning</h3>
-          </div>
-          <p class="text-gray-300 mb-4 leading-relaxed">
-            Advanced tax planning and optimization strategies to minimize your tax burden while maximizing after-tax investment returns.
-          </p>
-          <ul class="text-sm text-gray-400 space-y-2 mb-6">
-            <li class="flex items-center"><span class="w-1.5 h-1.5 bg-accent-400 rounded-full mr-2"></span>Tax structure optimization</li>
-            <li class="flex items-center"><span class="w-1.5 h-1.5 bg-accent-400 rounded-full mr-2"></span>Capital gains minimization</li>
-            <li class="flex items-center"><span class="w-1.5 h-1.5 bg-accent-400 rounded-full mr-2"></span>Income splitting strategies</li>
-          </ul>
-        </div>
-
-        <!-- Service 4 -->
-        <div class="card observe-scroll group hover:scale-105 transition-transform duration-300">
-          <div class="flex items-center mb-4">
-            <div class="p-3 bg-gradient-to-r from-accent-500 to-primary-500 rounded-lg mr-4 group-hover:animate-pulse">
-              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
-              </svg>
-            </div>
-            <h3 class="text-xl font-semibold text-white">Estate Planning</h3>
-          </div>
-          <p class="text-gray-300 mb-4 leading-relaxed">
-            Comprehensive estate planning to protect your legacy and ensure efficient wealth transfer to future generations.
-          </p>
-          <ul class="text-sm text-gray-400 space-y-2 mb-6">
-            <li class="flex items-center"><span class="w-1.5 h-1.5 bg-accent-400 rounded-full mr-2"></span>Trust structure optimization</li>
-            <li class="flex items-center"><span class="w-1.5 h-1.5 bg-accent-400 rounded-full mr-2"></span>Estate tax minimization</li>
-            <li class="flex items-center"><span class="w-1.5 h-1.5 bg-accent-400 rounded-full mr-2"></span>Charitable giving strategies</li>
-          </ul>
-        </div>
-
-        <!-- Service 5 -->
-        <div class="card observe-scroll group hover:scale-105 transition-transform duration-300">
-          <div class="flex items-center mb-4">
-            <div class="p-3 bg-gradient-to-r from-primary-500 to-accent-500 rounded-lg mr-4 group-hover:animate-pulse">
-              <svg class="w-8 h-8 text-dark-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
-              </svg>
-            </div>
-            <h3 class="text-xl font-semibold text-white">Business Succession</h3>
+            <h3 class="text-xl font-semibold text-white font-['Playfair_Display']">Business Succession</h3>
           </div>
           <p class="text-gray-300 mb-4 leading-relaxed">
             Strategic planning for business owners to ensure smooth transitions and maximize value during business succession.
           </p>
           <ul class="text-sm text-gray-400 space-y-2 mb-6">
-            <li class="flex items-center"><span class="w-1.5 h-1.5 bg-accent-400 rounded-full mr-2"></span>Business valuation</li>
-            <li class="flex items-center"><span class="w-1.5 h-1.5 bg-accent-400 rounded-full mr-2"></span>Exit planning</li>
-            <li class="flex items-center"><span class="w-1.5 h-1.5 bg-accent-400 rounded-full mr-2"></span>Succession coordination</li>
+            <li class="flex items-center"><span class="w-1.5 h-1.5 bg-green-400 rounded-full mr-2"></span>Business valuation analysis</li>
+            <li class="flex items-center"><span class="w-1.5 h-1.5 bg-green-400 rounded-full mr-2"></span>Exit strategy development</li>
+            <li class="flex items-center"><span class="w-1.5 h-1.5 bg-green-400 rounded-full mr-2"></span>Succession coordination</li>
           </ul>
+          <a href="/contact" class="text-yellow-400 hover:text-yellow-300 font-medium transition-colors duration-200">Learn More →</a>
         </div>
 
-        <!-- Service 6 -->
-        <div class="card observe-scroll group hover:scale-105 transition-transform duration-300">
+        <!-- Service 6: Entrepreneur Planning -->
+        <div class="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 hover:border-green-400/30 transition-all duration-500 hover:shadow-2xl hover:shadow-green-400/10 hover-lift fade-in stagger-6">
           <div class="flex items-center mb-4">
-            <div class="p-3 bg-gradient-to-r from-accent-600 to-primary-600 rounded-lg mr-4 group-hover:animate-pulse">
-              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="p-3 bg-gradient-to-r from-green-400 to-yellow-400 rounded-lg mr-4">
+              <svg class="w-8 h-8 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
               </svg>
             </div>
-            <h3 class="text-xl font-semibold text-white">Entrepreneur Planning</h3>
+            <h3 class="text-xl font-semibold text-white font-['Playfair_Display']">Entrepreneur Planning</h3>
           </div>
           <p class="text-gray-300 mb-4 leading-relaxed">
             Specialized financial planning for entrepreneurs, addressing unique challenges in business and personal wealth building.
           </p>
           <ul class="text-sm text-gray-400 space-y-2 mb-6">
-            <li class="flex items-center"><span class="w-1.5 h-1.5 bg-accent-400 rounded-full mr-2"></span>Cash flow management</li>
-            <li class="flex items-center"><span class="w-1.5 h-1.5 bg-accent-400 rounded-full mr-2"></span>Asset integration</li>
-            <li class="flex items-center"><span class="w-1.5 h-1.5 bg-accent-400 rounded-full mr-2"></span>Exit strategy development</li>
+            <li class="flex items-center"><span class="w-1.5 h-1.5 bg-green-400 rounded-full mr-2"></span>Cash flow management</li>
+            <li class="flex items-center"><span class="w-1.5 h-1.5 bg-green-400 rounded-full mr-2"></span>Asset integration planning</li>
+            <li class="flex items-center"><span class="w-1.5 h-1.5 bg-green-400 rounded-full mr-2"></span>Exit strategy development</li>
           </ul>
+          <a href="/contact" class="text-green-400 hover:text-green-300 font-medium transition-colors duration-200">Learn More →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Process Section -->
+  <section class="py-20 bg-slate-800/30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 fade-in">
+        <h2 class="text-4xl font-bold text-white mb-6 font-['Playfair_Display']">Our Process</h2>
+        <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          A systematic approach to comprehensive financial planning that puts your goals at the center of everything we do.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Process Step 1 -->
+        <div class="text-center fade-in stagger-1">
+          <div class="w-20 h-20 mx-auto bg-gradient-to-r from-yellow-400 to-green-400 rounded-full flex items-center justify-center mb-6 hover:scale-110 transition-transform duration-300">
+            <span class="text-2xl font-bold text-slate-900">1</span>
+          </div>
+          <h3 class="text-xl font-semibold text-white mb-3">Discovery & Analysis</h3>
+          <p class="text-gray-300 text-sm leading-relaxed">
+            Comprehensive review of your current financial situation, goals, and risk tolerance.
+          </p>
+        </div>
+
+        <!-- Process Step 2 -->
+        <div class="text-center fade-in stagger-2">
+          <div class="w-20 h-20 mx-auto bg-gradient-to-r from-green-400 to-yellow-400 rounded-full flex items-center justify-center mb-6 hover:scale-110 transition-transform duration-300">
+            <span class="text-2xl font-bold text-slate-900">2</span>
+          </div>
+          <h3 class="text-xl font-semibold text-white mb-3">Strategy Development</h3>
+          <p class="text-gray-300 text-sm leading-relaxed">
+            Custom financial strategy design based on your unique circumstances and objectives.
+          </p>
+        </div>
+
+        <!-- Process Step 3 -->
+        <div class="text-center fade-in stagger-3">
+          <div class="w-20 h-20 mx-auto bg-gradient-to-r from-yellow-400 to-green-400 rounded-full flex items-center justify-center mb-6 hover:scale-110 transition-transform duration-300">
+            <span class="text-2xl font-bold text-slate-900">3</span>
+          </div>
+          <h3 class="text-xl font-semibold text-white mb-3">Implementation</h3>
+          <p class="text-gray-300 text-sm leading-relaxed">
+            Systematic implementation of your financial plan with careful attention to tax efficiency.
+          </p>
+        </div>
+
+        <!-- Process Step 4 -->
+        <div class="text-center fade-in stagger-4">
+          <div class="w-20 h-20 mx-auto bg-gradient-to-r from-green-400 to-yellow-400 rounded-full flex items-center justify-center mb-6 hover:scale-110 transition-transform duration-300">
+            <span class="text-2xl font-bold text-slate-900">4</span>
+          </div>
+          <h3 class="text-xl font-semibold text-white mb-3">Ongoing Management</h3>
+          <p class="text-gray-300 text-sm leading-relaxed">
+            Continuous monitoring, rebalancing, and strategy adjustments as your life evolves.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Indicators Section -->
+  <section class="py-16 bg-slate-900/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-8 text-center">
+        <div class="fade-in stagger-1">
+          <div class="text-3xl font-bold text-yellow-400 mb-2">License #BC-2010-001</div>
+          <div class="text-sm text-gray-400">Licensed in BC</div>
+        </div>
+        <div class="fade-in stagger-2">
+          <div class="text-3xl font-bold text-green-400 mb-2">$5M</div>
+          <div class="text-sm text-gray-400">Insurance Coverage</div>
+        </div>
+        <div class="fade-in stagger-3">
+          <div class="text-3xl font-bold text-yellow-400 mb-2">25+</div>
+          <div class="text-sm text-gray-400">Years Experience</div>
+        </div>
+        <div class="fade-in stagger-4">
+          <div class="text-3xl font-bold text-green-400 mb-2">BBB A+</div>
+          <div class="text-sm text-gray-400">Rating</div>
+        </div>
+        <div class="fade-in stagger-5">
+          <div class="text-3xl font-bold text-yellow-400 mb-2">24hr</div>
+          <div class="text-sm text-gray-400">Response Promise</div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- CTA Section -->
-  <section class="section-padding bg-gradient-to-r from-dark-900 via-dark-800 to-dark-900">
-    <div class="container-custom mx-auto text-center">
-      <div class="observe-scroll glass-effect rounded-2xl p-12 glow-effect">
-        <h2 class="text-4xl font-bold text-white mb-6">Ready to Optimize Your Financial Strategy?</h2>
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm border border-slate-700/50 rounded-3xl p-12 fade-in">
+        <h2 class="text-4xl font-bold text-white mb-6 font-['Playfair_Display']">
+          Ready to Optimize Your <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-green-400">Wealth?</span>
+        </h2>
         <p class="text-xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
           Schedule a complimentary consultation to discover how our fee-only fiduciary approach 
           can help you achieve your wealth management goals.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/contact" class="btn-primary text-lg px-8 py-4 inline-flex items-center">
+          <a href="/contact" class="bg-gradient-to-r from-yellow-400 to-green-400 text-slate-900 px-8 py-4 rounded-lg font-semibold hover:shadow-lg hover:shadow-yellow-400/25 transition-all duration-300 transform hover:scale-105 inline-flex items-center justify-center">
             <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
             </svg>
             Schedule Free Consultation
           </a>
-          <a href="/calculator" class="btn-secondary text-lg px-8 py-4 inline-flex items-center">
+          <a href="/calculator" class="border border-yellow-400 text-yellow-400 px-8 py-4 rounded-lg font-semibold hover:bg-yellow-400 hover:text-slate-900 transition-all duration-300 inline-flex items-center justify-center">
             <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
             </svg>
@@ -288,3 +264,147 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 </Layout>
+
+<!-- Services Page Schema Markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FinancialService", 
+  "name": "WestGroup Financial Planning Services",
+  "description": "Comprehensive fee-only financial planning services for high-net-worth individuals",
+  "provider": {
+    "@type": "FinancialService",
+    "name": "WestGroup Financial Planning",
+    "url": "https://westgroupfinancial.com"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Financial Planning Services",
+    "itemListElement": [
+      {
+        "@type": "Service",
+        "name": "Wealth Management",
+        "description": "Sophisticated investment portfolio management with tax-efficient strategies",
+        "provider": {
+          "@type": "FinancialService",
+          "name": "WestGroup Financial Planning"
+        },
+        "areaServed": "British Columbia, Canada",
+        "serviceType": "Wealth Management"
+      },
+      {
+        "@type": "Service", 
+        "name": "Retirement Planning",
+        "description": "Strategic retirement planning to maintain lifestyle while minimizing tax burden",
+        "provider": {
+          "@type": "FinancialService",
+          "name": "WestGroup Financial Planning"
+        },
+        "areaServed": "British Columbia, Canada",
+        "serviceType": "Retirement Planning"
+      },
+      {
+        "@type": "Service",
+        "name": "Tax Planning", 
+        "description": "Advanced tax planning and optimization strategies",
+        "provider": {
+          "@type": "FinancialService",
+          "name": "WestGroup Financial Planning"
+        },
+        "areaServed": "British Columbia, Canada",
+        "serviceType": "Tax Planning"
+      },
+      {
+        "@type": "Service",
+        "name": "Estate Planning",
+        "description": "Comprehensive estate planning to protect legacy and wealth transfer",
+        "provider": {
+          "@type": "FinancialService", 
+          "name": "WestGroup Financial Planning"
+        },
+        "areaServed": "British Columbia, Canada",
+        "serviceType": "Estate Planning"
+      },
+      {
+        "@type": "Service",
+        "name": "Business Succession Planning",
+        "description": "Strategic planning for business owners for smooth transitions",
+        "provider": {
+          "@type": "FinancialService",
+          "name": "WestGroup Financial Planning"
+        },
+        "areaServed": "British Columbia, Canada", 
+        "serviceType": "Business Planning"
+      }
+    ]
+  },
+  "areaServed": {
+    "@type": "State",
+    "name": "British Columbia"
+  }
+}
+</script>.5 h-1.5 bg-green-400 rounded-full mr-2"></span>Portfolio diversification and rebalancing</li>
+            <li class="flex items-center"><span class="w-1.5 h-1.5 bg-green-400 rounded-full mr-2"></span>Tax-loss harvesting strategies</li>
+            <li class="flex items-center"><span class="w-1.5 h-1.5 bg-green-400 rounded-full mr-2"></span>Risk management and asset protection</li>
+          </ul>
+          <a href="/contact" class="text-yellow-400 hover:text-yellow-300 font-medium transition-colors duration-200">Learn More →</a>
+        </div>
+
+        <!-- Service 2: Retirement Planning -->
+        <div class="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 hover:border-green-400/30 transition-all duration-500 hover:shadow-2xl hover:shadow-green-400/10 hover-lift fade-in stagger-2">
+          <div class="flex items-center mb-4">
+            <div class="p-3 bg-gradient-to-r from-green-400 to-yellow-400 rounded-lg mr-4">
+              <svg class="w-8 h-8 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-white font-['Playfair_Display']">Retirement Planning</h3>
+          </div>
+          <p class="text-gray-300 mb-4 leading-relaxed">
+            Strategic retirement planning to ensure you maintain your lifestyle while minimizing tax burden throughout your retirement years.
+          </p>
+          <ul class="text-sm text-gray-400 space-y-2 mb-6">
+            <li class="flex items-center"><span class="w-1.5 h-1.5 bg-green-400 rounded-full mr-2"></span>RRSP/RRIF optimization</li>
+            <li class="flex items-center"><span class="w-1.5 h-1.5 bg-green-400 rounded-full mr-2"></span>Pension maximization</li>
+            <li class="flex items-center"><span class="w-1.5 h-1.5 bg-green-400 rounded-full mr-2"></span>Healthcare cost planning</li>
+          </ul>
+          <a href="/contact" class="text-green-400 hover:text-green-300 font-medium transition-colors duration-200">Learn More →</a>
+        </div>
+
+        <!-- Service 3: Tax Planning -->
+        <div class="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 hover:border-yellow-400/30 transition-all duration-500 hover:shadow-2xl hover:shadow-yellow-400/10 hover-lift fade-in stagger-3">
+          <div class="flex items-center mb-4">
+            <div class="p-3 bg-gradient-to-r from-yellow-400 to-green-400 rounded-lg mr-4">
+              <svg class="w-8 h-8 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-white font-['Playfair_Display']">Tax Planning</h3>
+          </div>
+          <p class="text-gray-300 mb-4 leading-relaxed">
+            Advanced tax planning and optimization strategies to minimize your tax burden while maximizing after-tax investment returns.
+          </p>
+          <ul class="text-sm text-gray-400 space-y-2 mb-6">
+            <li class="flex items-center"><span class="w-1.5 h-1.5 bg-green-400 rounded-full mr-2"></span>Tax structure optimization</li>
+            <li class="flex items-center"><span class="w-1.5 h-1.5 bg-green-400 rounded-full mr-2"></span>Capital gains minimization</li>
+            <li class="flex items-center"><span class="w-1.5 h-1.5 bg-green-400 rounded-full mr-2"></span>Income splitting strategies</li>
+          </ul>
+          <a href="/contact" class="text-yellow-400 hover:text-yellow-300 font-medium transition-colors duration-200">Learn More →</a>
+        </div>
+
+        <!-- Service 4: Estate Planning -->
+        <div class="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 hover:border-green-400/30 transition-all duration-500 hover:shadow-2xl hover:shadow-green-400/10 hover-lift fade-in stagger-4">
+          <div class="flex items-center mb-4">
+            <div class="p-3 bg-gradient-to-r from-green-400 to-yellow-400 rounded-lg mr-4">
+              <svg class="w-8 h-8 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-white font-['Playfair_Display']">Estate Planning</h3>
+          </div>
+          <p class="text-gray-300 mb-4 leading-relaxed">
+            Comprehensive estate planning to protect your legacy and ensure efficient wealth transfer to future generations.
+          </p>
+          <ul class="text-sm text-gray-400 space-y-2 mb-6">
+            <li class="flex items-center"><span class="w-1.5 h-1.5 bg-green-400 rounded-full mr-2"></span>Trust structure optimization</li>
+            <li class="flex items-center"><span class="w-1
