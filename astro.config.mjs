@@ -1,10 +1,7 @@
-// astro.config.mjs
+// astro.config.mjs - Fixed version
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
-import partytown from '@astrojs/partytown';
-import compress from 'astro-compress';
-import critters from 'astro-critters';
 
 export default defineConfig({
   site: 'https://westgroupfinancial.com',
@@ -23,6 +20,10 @@ export default defineConfig({
       lastmod: new Date(),
       entryLimit: 45000,
       customPages: [
+        'https://westgroupfinancial.com/about/',
+        'https://westgroupfinancial.com/testimonials/',
+        'https://westgroupfinancial.com/blog/',
+        'https://westgroupfinancial.com/contact/',
         'https://westgroupfinancial.com/services/comprehensive-financial-planning/',
         'https://westgroupfinancial.com/services/tax-efficient-investment-strategies/',
         'https://westgroupfinancial.com/services/retirement-income-planning/',
@@ -45,7 +46,7 @@ export default defineConfig({
         } else if (item.url.includes('/calculator/')) {
           item.priority = 0.8;
           item.changefreq = 'monthly';
-        } else if (item.url.includes('/locations/')) {
+        } else if (item.url.includes('/about/') || item.url.includes('/testimonials/') || item.url.includes('/blog/')) {
           item.priority = 0.7;
           item.changefreq = 'monthly';
         } else if (item.url.includes('/contact/')) {
@@ -54,44 +55,38 @@ export default defineConfig({
         }
         return item;
       }
-    }),
-    
-    // Optimize third-party scripts
-    partytown({
-      config: {
-        forward: ['dataLayer.push']
-      }
-    }),
-    
-    // Extract and inline critical CSS
-    critters({
-      path: './dist',
-      logger: 1
-    }),
-    
-    // Compress output files
-    compress({
-      CSS: true,
-      HTML: {
-        'remove-tag-whitespace': false,
-        'collapse-whitespace': true,
-        'minify-css': true,
-        'minify-js': true,
-        'remove-comments': true
-      },
-      Image: true,
-      JavaScript: true,
-      SVG: true,
     })
   ],
   
-  // SEO and performance optimizations
-  compressHTML: true,
-  
+  // Build optimizations
   build: {
-    // Optimize build output
     inlineStylesheets: 'auto',
     assets: '_assets',
+  },
+  
+  // Server configuration
+  server: {
+    port: 3000,
+    host: true
+  },
+  
+  // Vite configuration for optimizations
+  vite: {
+    build: {
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            vendor: ['astro'],
+          }
+        }
+      }
+    },
+    
+    // Define environment variables
+    define: {
+      __SITE_URL__: '"https://westgroupfinancial.com"',
+      __BUILD_DATE__: JSON.stringify(new Date().toISOString()),
+    }
   },
   
   // Image optimization
@@ -102,54 +97,5 @@ export default defineConfig({
         hostname: '**.westgroupfinancial.com',
       },
     ],
-  },
-  
-  // Server configuration
-  server: {
-    port: 3000,
-    host: true
-  },
-  
-  // Vite configuration for additional optimizations
-  vite: {
-    build: {
-      // Code splitting for better performance
-      rollupOptions: {
-        output: {
-          manualChunks: {
-            // Vendor chunk for third-party libraries
-            vendor: ['astro'],
-          }
-        }
-      }
-    },
-    
-    // CSS optimization
-    css: {
-      transformer: 'postcss',
-    },
-    
-    // Asset optimization
-    assetsInclude: ['**/*.woff2', '**/*.woff'],
-    
-    // Define environment variables
-    define: {
-      __SITE_URL__: '"https://westgroupfinancial.com"',
-      __BUILD_DATE__: JSON.stringify(new Date().toISOString()),
-    }
-  },
-  
-  // Markdown configuration (if using blog/content)
-  markdown: {
-    shikiConfig: {
-      theme: 'github-dark',
-      wrap: true
-    }
-  },
-  
-  // Experimental features for performance
-  experimental: {
-    assets: true,
-    viewTransitions: true
   }
 });
