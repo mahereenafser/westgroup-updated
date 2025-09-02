@@ -15,7 +15,7 @@ import Testimonials from '../components/Testimonials.astro';
   <ServicesGrid />
   
   <!-- Why Choose Us Section -->
-  <section class="section-padding bg-dark-900">
+  <section class="section-padding bg-black">
     <div class="container-custom mx-auto">
       <div class="text-center mb-16 observe-scroll">
         <h2 class="text-4xl lg:text-5xl font-bold mb-6">
@@ -33,7 +33,7 @@ import Testimonials from '../components/Testimonials.astro';
           <div class="space-y-8">
             <div class="flex items-start space-x-4">
               <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-primary-500 to-primary-400 rounded-lg flex items-center justify-center">
-                <svg class="w-6 h-6 text-dark-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
                 </svg>
               </div>
@@ -82,23 +82,26 @@ import Testimonials from '../components/Testimonials.astro';
           <div class="glass-effect rounded-2xl p-8 glow-effect">
             <h3 class="text-2xl font-bold text-white mb-6 text-center">Ready to Get Started?</h3>
             <div class="space-y-4">
-              <div class="flex items-center justify-between p-4 bg-dark-700/50 rounded-lg">
+              <div class="flex items-center justify-between p-4 bg-gray-800/50 rounded-lg">
                 <span class="text-gray-300">Free Initial Consultation</span>
                 <span class="text-accent-400 font-bold">$0</span>
               </div>
-              <div class="flex items-center justify-between p-4 bg-dark-700/50 rounded-lg">
+              <div class="flex items-center justify-between p-4 bg-gray-800/50 rounded-lg">
                 <span class="text-gray-300">Comprehensive Financial Plan</span>
                 <span class="text-primary-400 font-bold">Custom Quote</span>
               </div>
-              <div class="flex items-center justify-between p-4 bg-dark-700/50 rounded-lg">
+              <div class="flex items-center justify-between p-4 bg-gray-800/50 rounded-lg">
                 <span class="text-gray-300">Ongoing Management</span>
                 <span class="text-accent-400 font-bold">Fee-Only</span>
               </div>
             </div>
             <div class="mt-8 text-center">
-              <a href="/contact" class="btn-primary w-full py-4 text-lg">
-                Schedule Your Free Consultation
-              </a>
+              <!-- Fixed mobile button spacing -->
+              <div class="mobile-button-container">
+                <a href="/contact" class="btn-primary w-full py-4 text-lg block">
+                  Schedule Your Free Consultation
+                </a>
+              </div>
               <p class="text-xs text-gray-400 mt-3">No obligation • Confidential discussion • Immediate insights</p>
             </div>
           </div>
@@ -110,8 +113,8 @@ import Testimonials from '../components/Testimonials.astro';
   <Certifications />
   <Testimonials />
 
-  <!-- Final CTA Section -->
-  <section class="section-padding bg-gradient-to-r from-dark-900 via-dark-800 to-dark-900">
+  <!-- Final CTA Section with Fixed Button Spacing -->
+  <section class="section-padding bg-gradient-to-r from-black via-gray-900 to-black">
     <div class="container-custom mx-auto text-center">
       <div class="observe-scroll">
         <h2 class="text-4xl lg:text-5xl font-bold mb-6">
@@ -122,14 +125,15 @@ import Testimonials from '../components/Testimonials.astro';
           Join over 1,000 satisfied clients who trust WestGroup Financial with their wealth management. 
           As fee-only fiduciary advisors, we're committed to your success, not sales commissions.
         </p>
-        <div class="flex flex-col sm:flex-row gap-6 justify-center">
-          <a href="/contact" class="btn-primary text-xl px-10 py-5 inline-flex items-center">
+        <!-- Fixed mobile button spacing -->
+        <div class="mobile-button-container justify-center">
+          <a href="/contact" class="btn-primary text-xl px-10 py-5 inline-flex items-center justify-center">
             <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
             </svg>
             Schedule Free Consultation
           </a>
-          <a href="/services" class="btn-secondary text-xl px-10 py-5 inline-flex items-center">
+          <a href="/services" class="btn-secondary text-xl px-10 py-5 inline-flex items-center justify-center">
             <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
             </svg>
