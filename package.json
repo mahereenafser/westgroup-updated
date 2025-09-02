@@ -20,51 +20,23 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro check && astro build",
-    "build:prod": "astro check && astro build --mode production",
     "preview": "astro preview",
     "check": "astro check",
-    "sync": "astro sync",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx,.astro",
-    "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx,.astro --fix",
-    "format": "prettier --write .",
-    "format:check": "prettier --check .",
-    "generate:sitemap": "node scripts/generate-sitemap.js",
-    "optimize:images": "node scripts/optimize-images.js",
-    "seo:audit": "lighthouse --only-categories=seo --chrome-flags='--headless' --output=html --output-path=./seo-audit.html https://localhost:4321",
-    "deploy": "npm run build:prod && vercel --prod"
+    "sync": "astro sync"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
-    "@astrojs/partytown": "^2.1.2",
     "@astrojs/sitemap": "^3.2.0",
     "@astrojs/tailwind": "^5.1.1",
     "astro": "^4.16.7",
-    "astro-compress": "^2.3.1",
-    "astro-critters": "^2.1.0",
     "tailwindcss": "^3.4.14",
     "typescript": "^5.6.3"
   },
   "devDependencies": {
-    "@types/node": "^22.8.1",
-    "@typescript-eslint/eslint-plugin": "^8.11.0",
-    "@typescript-eslint/parser": "^8.11.0",
-    "eslint": "^9.13.0",
-    "eslint-plugin-astro": "^1.2.4",
-    "prettier": "^3.3.3",
-    "prettier-plugin-astro": "^0.14.1",
-    "lighthouse": "^12.2.1",
-    "sharp": "^0.33.5"
+    "@types/node": "^22.8.1"
   },
   "engines": {
     "node": ">=18.0.0",
     "npm": ">=9.0.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/mahereenafser/westgroup-updated.git"
-  },
-  "homepage": "https://westgroupfinancial.com",
-  "bugs": {
-    "url": "https://github.com/mahereenafser/westgroup-updated/issues"
   }
 }
