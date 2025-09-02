@@ -1,0 +1,567 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+  title="Contact WestGroup Financial Planning - Schedule Your Free Consultation"
+  description="Contact WestGroup Financial Planning for a free consultation. Located in Surrey, BC, serving clients across British Columbia. Call (604) 123-4567 or schedule online."
+  canonical="https://westgroupfinancial.com/contact/"
+>
+  <!-- Hero Section -->
+  <section class="relative min-h-[70vh] flex items-center justify-center pt-20">
+    <div class="absolute inset-0 -z-10">
+      <div class="absolute top-20 left-10 w-72 h-72 bg-yellow-400/5 rounded-full blur-3xl animate-pulse"></div>
+      <div class="absolute bottom-20 right-10 w-96 h-96 bg-green-400/5 rounded-full blur-3xl animate-pulse" style="animation-delay: -2s;"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="fade-in">
+        <h1 class="text-5xl lg:text-7xl font-bold mb-6 leading-tight font-['Playfair_Display']">
+          <span class="text-white">Get</span><br>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-green-400">Started Today</span>
+        </h1>
+        <p class="text-xl lg:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
+          Ready to transform your financial future? Schedule your complimentary consultation with 
+          British Columbia's trusted fee-only fiduciary financial planning experts.
+        </p>
+        
+        <!-- Quick Contact Options -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-12">
+          <a href="tel:+16041234567" class="bg-gradient-to-r from-yellow-400 to-green-400 text-slate-900 p-6 rounded-2xl font-semibold hover:shadow-lg hover:shadow-yellow-400/25 transition-all duration-300 transform hover:scale-105 group">
+            <div class="flex items-center justify-center mb-3">
+              <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+              </svg>
+            </div>
+            <div class="text-lg font-bold mb-1">Call Now</div>
+            <div class="text-sm">(604) 123-4567</div>
+          </a>
+          
+          <a href="mailto:info@westgroupfinancial.com" class="border border-yellow-400 text-yellow-400 p-6 rounded-2xl font-semibold hover:bg-yellow-400 hover:text-slate-900 transition-all duration-300 group">
+            <div class="flex items-center justify-center mb-3">
+              <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+              </svg>
+            </div>
+            <div class="text-lg font-bold mb-1">Email Us</div>
+            <div class="text-sm">info@westgroupfinancial.com</div>
+          </a>
+          
+          <div class="border border-green-400 text-green-400 p-6 rounded-2xl">
+            <div class="flex items-center justify-center mb-3">
+              <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <div class="text-lg font-bold mb-1">Visit Us</div>
+            <div class="text-sm">Surrey, BC Office</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form & Info Section -->
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        
+        <!-- Contact Form -->
+        <div class="fade-in">
+          <div class="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8">
+            <h2 class="text-3xl font-bold text-white mb-6 font-['Playfair_Display']">
+              Schedule Your <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-green-400">Free Consultation</span>
+            </h2>
+            <p class="text-gray-300 mb-8 leading-relaxed">
+              Complete the form below and we'll contact you within 24 hours to schedule your complimentary 
+              financial planning consultation. No obligations, just expert insights.
+            </p>
+            
+            <form class="space-y-6" id="contact-form">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label for="firstName" class="block text-sm font-medium text-gray-300 mb-2">First Name *</label>
+                  <input 
+                    type="text" 
+                    id="firstName" 
+                    name="firstName" 
+                    required 
+                    class="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-gray-400 focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 transition-all duration-300 focus-ring"
+                    placeholder="John"
+                  >
+                </div>
+                <div>
+                  <label for="lastName" class="block text-sm font-medium text-gray-300 mb-2">Last Name *</label>
+                  <input 
+                    type="text" 
+                    id="lastName" 
+                    name="lastName" 
+                    required 
+                    class="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-gray-400 focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 transition-all duration-300 focus-ring"
+                    placeholder="Smith"
+                  >
+                </div>
+              </div>
+              
+              <div>
+                <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email Address *</label>
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="email" 
+                  required 
+                  class="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-gray-400 focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 transition-all duration-300 focus-ring"
+                  placeholder="john.smith@email.com"
+                >
+              </div>
+              
+              <div>
+                <label for="phone" class="block text-sm font-medium text-gray-300 mb-2">Phone Number *</label>
+                <input 
+                  type="tel" 
+                  id="phone" 
+                  name="phone" 
+                  required 
+                  class="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-gray-400 focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 transition-all duration-300 focus-ring"
+                  placeholder="(604) 123-4567"
+                >
+              </div>
+              
+              <div>
+                <label for="netWorth" class="block text-sm font-medium text-gray-300 mb-2">Approximate Net Worth</label>
+                <select 
+                  id="netWorth" 
+                  name="netWorth" 
+                  class="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 transition-all duration-300 focus-ring"
+                >
+                  <option value="">Select Range</option>
+                  <option value="under-500k">Under $500,000</option>
+                  <option value="500k-1m">$500,000 - $1 Million</option>
+                  <option value="1m-2m">$1 Million - $2 Million</option>
+                  <option value="2m-5m">$2 Million - $5 Million</option>
+                  <option value="5m-10m">$5 Million - $10 Million</option>
+                  <option value="over-10m">Over $10 Million</option>
+                </select>
+              </div>
+              
+              <div>
+                <label for="services" class="block text-sm font-medium text-gray-300 mb-2">Areas of Interest</label>
+                <div class="grid grid-cols-2 gap-3">
+                  <label class="flex items-center">
+                    <input type="checkbox" name="services" value="retirement" class="text-yellow-400 rounded focus:ring-yellow-400/20">
+                    <span class="ml-2 text-sm text-gray-300">Retirement Planning</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input type="checkbox" name="services" value="tax" class="text-yellow-400 rounded focus:ring-yellow-400/20">
+                    <span class="ml-2 text-sm text-gray-300">Tax Planning</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input type="checkbox" name="services" value="investment" class="text-yellow-400 rounded focus:ring-yellow-400/20">
+                    <span class="ml-2 text-sm text-gray-300">Investment Management</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input type="checkbox" name="services" value="estate" class="text-yellow-400 rounded focus:ring-yellow-400/20">
+                    <span class="ml-2 text-sm text-gray-300">Estate Planning</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input type="checkbox" name="services" value="business" class="text-yellow-400 rounded focus:ring-yellow-400/20">
+                    <span class="ml-2 text-sm text-gray-300">Business Planning</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input type="checkbox" name="services" value="wealth" class="text-yellow-400 rounded focus:ring-yellow-400/20">
+                    <span class="ml-2 text-sm text-gray-300">Wealth Management</span>
+                  </label>
+                </div>
+              </div>
+              
+              <div>
+                <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Tell Us About Your Goals</label>
+                <textarea 
+                  id="message" 
+                  name="message" 
+                  rows="4" 
+                  class="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-gray-400 focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 transition-all duration-300 focus-ring"
+                  placeholder="What are your primary financial goals and concerns?"
+                ></textarea>
+              </div>
+              
+              <div>
+                <label for="timeline" class="block text-sm font-medium text-gray-300 mb-2">Preferred Contact Timeline</label>
+                <select 
+                  id="timeline" 
+                  name="timeline" 
+                  class="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 transition-all duration-300 focus-ring"
+                >
+                  <option value="asap">As soon as possible</option>
+                  <option value="this-week">Within this week</option>
+                  <option value="next-week">Next week</option>
+                  <option value="this-month">Within this month</option>
+                  <option value="flexible">I'm flexible</option>
+                </select>
+              </div>
+              
+              <div class="bg-gradient-to-r from-yellow-400/10 to-green-400/10 p-4 rounded-lg border border-yellow-400/20">
+                <div class="flex items-start">
+                  <svg class="w-5 h-5 text-yellow-400 mt-0.5 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                  </svg>
+                  <div class="text-sm text-gray-300">
+                    <strong class="text-white">Your Privacy is Protected:</strong> All information is confidential and will only be used to provide you with financial planning insights. We never share client information with third parties.
+                  </div>
+                </div>
+              </div>
+              
+              <button 
+                type="submit" 
+                class="w-full bg-gradient-to-r from-yellow-400 to-green-400 text-slate-900 py-4 rounded-lg font-semibold hover:shadow-lg hover:shadow-yellow-400/25 transition-all duration-300 transform hover:scale-105"
+              >
+                Schedule My Free Consultation
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="fade-in">
+          <div class="space-y-8">
+            <!-- Office Information -->
+            <div class="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8">
+              <h3 class="text-2xl font-bold text-white mb-6 font-['Playfair_Display']">
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-green-400">Our Office</span>
+              </h3>
+              
+              <div class="space-y-6">
+                <div class="flex items-start space-x-4">
+                  <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-yellow-400 to-green-400 rounded-lg flex items-center justify-center">
+                    <svg class="w-6 h-6 text-slate-900" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 class="text-lg font-semibold text-white mb-2">Address</h4>
+                    <p class="text-gray-300">
+                      123 Financial Street, Suite 456<br>
+                      Surrey, BC V3T 2W1<br>
+                      Canada
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex items-start space-x-4">
+                  <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-green-400 to-yellow-400 rounded-lg flex items-center justify-center">
+                    <svg class="w-6 h-6 text-slate-900" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 class="text-lg font-semibold text-white mb-2">Phone & Emergency Line</h4>
+                    <p class="text-gray-300">
+                      Office: <a href="tel:+16041234567" class="text-yellow-400 hover:text-yellow-300">(604) 123-4567</a><br>
+                      Emergency: <a href="tel:+16041234568" class="text-green-400 hover:text-green-300">(604) 123-4568</a><br>
+                      Toll Free: <a href="tel:+18001234567" class="text-yellow-400 hover:text-yellow-300">1-800-123-4567</a>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex items-start space-x-4">
+                  <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-yellow-400 to-green-400 rounded-lg flex items-center justify-center">
+                    <svg class="w-6 h-6 text-slate-900" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                      <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 class="text-lg font-semibold text-white mb-2">Email</h4>
+                    <p class="text-gray-300">
+                      General: <a href="mailto:info@westgroupfinancial.com" class="text-yellow-400 hover:text-yellow-300">info@westgroupfinancial.com</a><br>
+                      New Clients: <a href="mailto:welcome@westgroupfinancial.com" class="text-green-400 hover:text-green-300">welcome@westgroupfinancial.com</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Business Hours -->
+            <div class="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8">
+              <h3 class="text-2xl font-bold text-white mb-6 font-['Playfair_Display']">
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-green-400">Business Hours</span>
+              </h3>
+              
+              <div class="space-y-3">
+                <div class="flex justify-between items-center py-2 border-b border-slate-700/50">
+                  <span class="text-gray-300">Monday - Friday</span>
+                  <span class="text-white font-semibold">9:00 AM - 5:00 PM</span>
+                </div>
+                <div class="flex justify-between items-center py-2 border-b border-slate-700/50">
+                  <span class="text-gray-300">Saturday</span>
+                  <span class="text-white font-semibold">9:00 AM - 1:00 PM</span>
+                </div>
+                <div class="flex justify-between items-center py-2 border-b border-slate-700/50">
+                  <span class="text-gray-300">Sunday</span>
+                  <span class="text-gray-400">Closed</span>
+                </div>
+                <div class="flex justify-between items-center py-2">
+                  <span class="text-gray-300">Emergency Support</span>
+                  <span class="text-green-400 font-semibold">24/7 Available</span>
+                </div>
+              </div>
+              
+              <div class="mt-6 p-4 bg-gradient-to-r from-green-400/10 to-yellow-400/10 rounded-lg border border-green-400/20">
+                <div class="flex items-center">
+                  <svg class="w-5 h-5 text-green-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                  <div class="text-sm text-gray-300">
+                    <strong class="text-white">Evening & Weekend Appointments Available</strong><br>
+                    We understand your schedule. Request flexible appointment times.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Trust Indicators -->
+            <div class="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8">
+              <h3 class="text-2xl font-bold text-white mb-6 font-['Playfair_Display']">
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-green-400">Why Choose Us</span>
+              </h3>
+              
+              <div class="space-y-4">
+                <div class="flex items-center space-x-3">
+                  <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span class="text-gray-300"><strong class="text-white">Licensed:</strong> IIROC #BC-2010-001</span>
+                </div>
+                <div class="flex items-center space-x-3">
+                  <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span class="text-gray-300"><strong class="text-white">Insured:</strong> $5M Professional Liability</span>
+                </div>
+                <div class="flex items-center space-x-3">
+                  <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span class="text-gray-300"><strong class="text-white">Experience:</strong> 25+ Years Serving BC</span>
+                </div>
+                <div class="flex items-center space-x-3">
+                  <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span class="text-gray-300"><strong class="text-white">Rating:</strong> BBB A+ Accredited Business</span>
+                </div>
+                <div class="flex items-center space-x-3">
+                  <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span class="text-gray-300"><strong class="text-white">Guarantee:</strong> 100% Satisfaction Promise</span>
+                </div>
+                <div class="flex items-center space-x-3">
+                  <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span class="text-gray-300"><strong class="text-white">Response:</strong> 24-Hour Callback Promise</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Areas -->
+  <section class="py-20 bg-slate-800/30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 fade-in">
+        <h2 class="text-4xl lg:text-5xl font-bold mb-6 font-['Playfair_Display']">
+          <span class="text-white">Service</span>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-green-400"> Areas</span>
+        </h2>
+        <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          We proudly serve clients throughout British Columbia with in-person and virtual consultations.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+        <div class="text-center p-4 bg-slate-800/50 rounded-lg hover-lift fade-in stagger-1">
+          <h3 class="text-lg font-semibold text-white mb-1">Vancouver</h3>
+          <p class="text-sm text-gray-400">30 min drive</p>
+        </div>
+        <div class="text-center p-4 bg-slate-800/50 rounded-lg hover-lift fade-in stagger-2">
+          <h3 class="text-lg font-semibold text-white mb-1">Burnaby</h3>
+          <p class="text-sm text-gray-400">25 min drive</p>
+        </div>
+        <div class="text-center p-4 bg-slate-800/50 rounded-lg hover-lift fade-in stagger-3">
+          <h3 class="text-lg font-semibold text-white mb-1">Richmond</h3>
+          <p class="text-sm text-gray-400">35 min drive</p>
+        </div>
+        <div class="text-center p-4 bg-slate-800/50 rounded-lg hover-lift fade-in stagger-4">
+          <h3 class="text-lg font-semibold text-white mb-1">White Rock</h3>
+          <p class="text-sm text-gray-400">15 min drive</p>
+        </div>
+        <div class="text-center p-4 bg-slate-800/50 rounded-lg hover-lift fade-in stagger-5">
+          <h3 class="text-lg font-semibold text-white mb-1">Langley</h3>
+          <p class="text-sm text-gray-400">20 min drive</p>
+        </div>
+        <div class="text-center p-4 bg-slate-800/50 rounded-lg hover-lift fade-in stagger-6">
+          <h3 class="text-lg font-semibold text-white mb-1">Delta</h3>
+          <p class="text-sm text-gray-400">25 min drive</p>
+        </div>
+      </div>
+      
+      <div class="text-center mt-8 fade-in">
+        <p class="text-gray-300">
+          <strong class="text-white">Virtual Consultations Available</strong> - We serve clients across all of British Columbia through secure video conferencing.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 fade-in">
+        <h2 class="text-4xl lg:text-5xl font-bold mb-6 font-['Playfair_Display']">
+          <span class="text-white">Frequently Asked</span>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-green-400"> Questions</span>
+        </h2>
+      </div>
+
+      <div class="space-y-6">
+        <div class="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 fade-in stagger-1">
+          <button class="w-full text-left flex items-center justify-between faq-toggle">
+            <h3 class="text-lg font-semibold text-white">What makes WestGroup different from other financial advisors?</h3>
+            <svg class="w-5 h-5 text-yellow-400 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="faq-content mt-4 text-gray-300 leading-relaxed hidden">
+            <p>We operate under a fee-only fiduciary standard, meaning we're legally bound to act in your best interest. Unlike commission-based advisors, we don't sell products or receive kickbacks, ensuring our advice is always objective and in your favor.</p>
+          </div>
+        </div>
+
+        <div class="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 fade-in stagger-2">
+          <button class="w-full text-left flex items-center justify-between faq-toggle">
+            <h3 class="text-lg font-semibold text-white">What is the minimum investment to work with WestGroup?</h3>
+            <svg class="w-5 h-5 text-yellow-400 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="faq-content mt-4 text-gray-300 leading-relaxed hidden">
+            <p>We typically work with clients who have $500,000+ in investable assets. However, we evaluate each situation individually and may make exceptions for clients with high growth potential or complex planning needs.</p>
+          </div>
+        </div>
+
+        <div class="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 fade-in stagger-3">
+          <button class="w-full text-left flex items-center justify-between faq-toggle">
+            <h3 class="text-lg font-semibold text-white">How are your fees structured?</h3>
+            <svg class="w-5 h-5 text-yellow-400 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="faq-content mt-4 text-gray-300 leading-relaxed hidden">
+            <p>Our fees are transparent and asset-based, typically ranging from 0.75% to 1.25% annually depending on portfolio size and complexity. We also offer project-based planning fees for specific services. No hidden costs, no commissions, no surprises.</p>
+          </div>
+        </div>
+
+        <div class="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 fade-in stagger-4">
+          <button class="w-full text-left flex items-center justify-between faq-toggle">
+            <h3 class="text-lg font-semibold text-white">What happens during the initial consultation?</h3>
+            <svg class="w-5 h-5 text-yellow-400 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="faq-content mt-4 text-gray-300 leading-relaxed hidden">
+            <p>Your complimentary 60-minute consultation includes a comprehensive review of your current financial situation, discussion of your goals and concerns, and preliminary recommendations. There's no obligation to proceed, and you'll receive valuable insights regardless.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<!-- Contact form and FAQ functionality -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // FAQ Toggle Functionality
+    const faqToggles = document.querySelectorAll('.faq-toggle');
+    
+    faqToggles.forEach(toggle => {
+      toggle.addEventListener('click', function() {
+        const content = this.nextElementSibling;
+        const arrow = this.querySelector('svg');
+        
+        if (content.classList.contains('hidden')) {
+          content.classList.remove('hidden');
+          arrow.style.transform = 'rotate(180deg)';
+        } else {
+          content.classList.add('hidden');
+          arrow.style.transform = 'rotate(0deg)';
+        }
+      });
+    });
+
+    // Contact Form Submission
+    const contactForm = document.getElementById('contact-form');
+    
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Get form data
+      const formData = new FormData(this);
+      const data = Object.fromEntries(formData.entries());
+      
+      // Show success message (replace with actual form submission logic)
+      alert('Thank you for your interest! We will contact you within 24 hours to schedule your free consultation.');
+      
+      // Reset form
+      this.reset();
+    });
+  });
+</script>
+
+<!-- Contact Page Schema Markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "mainEntity": {
+    "@type": "FinancialService",
+    "name": "WestGroup Financial Planning",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "123 Financial Street, Suite 456",
+      "addressLocality": "Surrey",
+      "addressRegion": "BC",
+      "postalCode": "V3T 2W1",
+      "addressCountry": "CA"
+    },
+    "telephone": "+1-604-123-4567",
+    "email": "info@westgroupfinancial.com",
+    "openingHours": [
+      "Mo-Fr 09:00-17:00",
+      "Sa 09:00-13:00"
+    ],
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Vancouver"
+      },
+      {
+        "@type": "City", 
+        "name": "Surrey"
+      },
+      {
+        "@type": "City",
+        "name": "Burnaby"
+      },
+      {
+        "@type": "City",
+        "name": "Richmond"
+      }
+    ]
+  }
+}
+</script>
