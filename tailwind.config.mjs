@@ -68,7 +68,64 @@ export default {
           '100%': { opacity: '1', transform: 'translateY(0)' },
         },
         slideInLeft: {
-          /** @type {import('tailwindcss').Config} */
+          '0%': { opacity: '0', transform: 'translateX(-50px)' },
+          '100%': { opacity: '1', transform: 'translateX(0)' },
+        },
+        slideInRight: {
+          '0%': { opacity: '0', transform: 'translateX(50px)' },
+          '100%': { opacity: '1', transform: 'translateX(0)' },
+        },
+        glow: {
+          '0%, 100%': { 
+            boxShadow: '0 0 20px rgba(234, 179, 8, 0.4)',
+            transform: 'scale(1)'
+          },
+          '50%': { 
+            boxShadow: '0 0 40px rgba(234, 179, 8, 0.8)', 
+            transform: 'scale(1.02)'
+          },
+        },
+        float: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-20px)' },
+        },
+        'pulse-glow': {
+          '0%, 100%': {
+            opacity: '1',
+            boxShadow: '0 0 30px rgba(234, 179, 8, 0.3)',
+            transform: 'scale(1)',
+          },
+          '50%': {
+            opacity: '0.8',
+            boxShadow: '0 0 50px rgba(234, 179, 8, 0.6)',
+            transform: 'scale(1.02)',
+          }
+        },
+        bounceGentle: {
+          '0%, 100%': { transform: 'translateY(-5%)' },
+          '50%': { transform: 'translateY(0)' },
+        }
+      },
+      transitionDuration: {
+        '400': '400ms',
+        '600': '600ms',
+        '700': '700ms',
+        '800': '800ms',
+        '900': '900ms',
+        '1000': '1000ms',
+      },
+      transitionTimingFunction: {
+        'smooth': 'cubic-bezier(0.4, 0, 0.2, 1)',
+        'smooth-in': 'cubic-bezier(0.4, 0, 1, 1)',
+        'smooth-out': 'cubic-bezier(0, 0, 0.2, 1)',
+        'bounce-smooth': 'cubic-bezier(0.68, -0.55, 0.265, 1.55)',
+      }
+    },
+  },
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
+}/** @type {import('tailwindcss').Config} */
 export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   theme: {
