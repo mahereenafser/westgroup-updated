@@ -1,161 +1,293 @@
 ---
+// src/layouts/Layout.astro
 import SEO from '../components/SEO.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import '../styles/global.css';
 
 export interface Props {
   title: string;
-  description?: string;
-  keywords?: string;
-  ogImage?: string;
+  description: string;
+  canonical?: string;
+  image?: string;
+  noindex?: boolean;
+  type?: string;
 }
 
-const { 
-  title, 
-  description = "WestGroup Financial Management - Expert fee-only financial planning, wealth management, and fiduciary advisory services in BC. Tax-efficient strategies for high-net-worth individuals.",
-  keywords = "fee-only financial planning, fiduciary financial advisor, wealth management, retirement planning, tax-efficient investments, estate planning, business succession planning",
-  ogImage = "/images/og-image.jpg"
-} = Astro.props;
+const { title, description, canonical, image, noindex, type } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en-CA" class="scroll-smooth">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="generator" content={Astro.generator} />
+    
+    <!-- SEO Component -->
     <SEO 
       title={title}
       description={description}
-      keywords={keywords}
-      ogImage={ogImage}
+      canonical={canonical}
+      image={image}
+      noindex={noindex}
+      type={type}
     />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-    <meta name="generator" content={Astro.generator} />
-    
-    <!-- Preload critical fonts -->
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/fonts/PlayfairDisplay-Bold.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/images/logo.png" as="image" />
+
+    <!-- Critical CSS for above-fold content -->
+    <style>
+      /* Critical CSS - Above the fold styles */
+      .preload-hidden { opacity: 0; }
+      .preload-visible { opacity: 1; transition: opacity 0.3s ease; }
+      
+      /* Smooth animation base */
+      * {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      
+      html {
+        scroll-behavior: smooth;
+      }
+      
+      body {
+        padding-top: 120px; /* Account for fixed header */
+      }
+      
+      @media (max-width: 768px) {
+        body {
+          padding-top: 100px;
+        }
+      }
+
+      /* Reduce motion for users who prefer it */
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+          scroll-behavior: auto !important;
+        }
+        
+        html {
+          scroll-behavior: auto;
+        }
+      }
+
+      /* Smooth animations with hardware acceleration */
+      .animate-smooth {
+        will-change: transform, opacity;
+        transform: translateZ(0);
+        backface-visibility: hidden;
+        perspective: 1000px;
+      }
+
+      /* Improved hover animations */
+      .hover-lift {
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      
+      .hover-lift:hover {
+        transform: translateY(-2px) translateZ(0);
+      }
+
+      /* Smooth fade-in animation */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), 
+                    transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Stagger animation delays for lists */
+      .stagger-1 { transition-delay: 0.1s; }
+      .stagger-2 { transition-delay: 0.2s; }
+      .stagger-3 { transition-delay: 0.3s; }
+      .stagger-4 { transition-delay: 0.4s; }
+      .stagger-5 { transition-delay: 0.5s; }
+      .stagger-6 { transition-delay: 0.6s; }
+    </style>
+
+    <!-- Google Fonts with display=swap for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-    <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json" is:inline>
-      {
-        "@context": "https://schema.org",
-        "@type": "FinancialService",
-        "name": "WestGroup Financial Management Inc.",
-        "description": "Fee-only financial planning and wealth management services for high-net-worth individuals and families in British Columbia.",
-        "url": "https://westgroupfinancial.com",
-        "telephone": "+1-604-555-0123",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "123 Financial District",
-          "addressLocality": "Surrey",
-          "addressRegion": "BC",
-          "postalCode": "V3S 0A1",
-          "addressCountry": "CA"
-        },
-        "serviceArea": {
-          "@type": "GeoCircle",
-          "geoMidpoint": {
-            "@type": "GeoCoordinates",
-            "latitude": 49.1913,
-            "longitude": -122.8490
-          },
-          "geoRadius": "100000"
-        },
-        "priceRange": "$$$$",
-        "openingHours": "Mo-Fr 08:00-17:00",
-        "sameAs": [
-          "https://www.linkedin.com/company/westgroup-financial"
-        ]
-      }
-    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   </head>
-  <body class="bg-dark-950 text-white overflow-x-hidden">
+
+  <body class="bg-slate-900 text-white font-['Inter'] antialiased">
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-yellow-400 text-slate-900 px-4 py-2 rounded-lg font-semibold z-50 transition-all duration-200">
+      Skip to main content
+    </a>
+
+    <!-- Header -->
     <Header />
-    <main class="min-h-screen">
+
+    <!-- Main Content -->
+    <main id="main-content" class="min-h-screen">
       <slot />
     </main>
+
+    <!-- Footer -->
     <Footer />
-    
-    <!-- Background Effects -->
-    <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
-      <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-500/5 rounded-full blur-3xl animate-float"></div>
-      <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent-500/5 rounded-full blur-3xl animate-float" style="animation-delay: -3s;"></div>
-      <div class="absolute top-3/4 left-1/2 w-64 h-64 bg-primary-400/5 rounded-full blur-3xl animate-float" style="animation-delay: -1.5s;"></div>
-    </div>
 
-    <script is:inline>
-      // Enhanced smooth scrolling and scroll animations
-      document.addEventListener('DOMContentLoaded', function() {
-        // Smooth scrolling for anchor links
-        const links = document.querySelectorAll('a[href^="#"]');
-        links.forEach(link => {
-          link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-              target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-              });
-            }
-          });
-        });
-
-        // Enhanced scroll animation observer with staggered delays
-        const observerOptions = {
-          threshold: 0.2,
-          rootMargin: '0px 0px -80px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach((entry, index) => {
-            if (entry.isIntersecting && !entry.target.classList.contains('animate-fade-in')) {
-              // Add staggered delay for elements in the same container
-              const delay = index * 100;
-              setTimeout(() => {
-                entry.target.classList.add('animate-fade-in');
-              }, delay);
-            }
-          });
-        }, observerOptions);
-
-        // Observe all scroll-triggered elements
-        document.querySelectorAll('.observe-scroll').forEach(el => {
-          observer.observe(el);
-        });
-
-        // Performance: Throttled scroll handler
-        let ticking = false;
-        function updateScrollAnimations() {
-          // Any additional scroll-based animations can go here
-          ticking = false;
+    <!-- Global Scripts -->
+    <script>
+      // Smooth scroll animation observer
+      class SmoothAnimations {
+        constructor() {
+          this.init();
         }
 
-        window.addEventListener('scroll', function() {
-          if (!ticking) {
-            requestAnimationFrame(updateScrollAnimations);
-            ticking = true;
-          }
-        }, { passive: true });
-
-        // Add smooth page transitions
-        const pageTransition = document.createElement('div');
-        pageTransition.className = 'fixed inset-0 bg-dark-950 z-[9999] pointer-events-none opacity-0 transition-opacity duration-500 ease-out';
-        document.body.appendChild(pageTransition);
-
-        // Enhance all buttons with subtle animations
-        const buttons = document.querySelectorAll('button, .btn-primary, .btn-secondary, .btn-accent');
-        buttons.forEach(button => {
-          button.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-2px) scale(1.02)';
-          });
+        init() {
+          // Remove preload state
+          this.removePreloadState();
           
-          button.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0px) scale(1)';
+          // Initialize intersection observer for fade-in animations
+          this.initScrollAnimations();
+          
+          // Initialize smooth hover effects
+          this.initHoverEffects();
+          
+          // Performance optimization
+          this.optimizePerformance();
+        }
+
+        removePreloadState() {
+          document.body.classList.remove('preload-hidden');
+          document.body.classList.add('preload-visible');
+        }
+
+        initScrollAnimations() {
+          // Only initialize if user hasn't requested reduced motion
+          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            return;
+          }
+
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+              }
+            });
+          }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+          });
+
+          // Observe all elements with fade-in class
+          document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+          });
+        }
+
+        initHoverEffects() {
+          // Add smooth hover effects to cards and buttons
+          const hoverElements = document.querySelectorAll('.hover-lift');
+          
+          hoverElements.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+              el.style.transform = 'translateY(-2px) translateZ(0)';
+            });
+            
+            el.addEventListener('mouseleave', () => {
+              el.style.transform = 'translateY(0) translateZ(0)';
+            });
+          });
+        }
+
+        optimizePerformance() {
+          // Use requestAnimationFrame for smooth animations
+          let ticking = false;
+          
+          window.addEventListener('scroll', () => {
+            if (!ticking) {
+              requestAnimationFrame(() => {
+                // Handle scroll-based animations here
+                ticking = false;
+              });
+              ticking = true;
+            }
+          });
+
+          // Lazy load non-critical resources
+          if ('IntersectionObserver' in window) {
+            const lazyImages = document.querySelectorAll('img[data-src]');
+            const imageObserver = new IntersectionObserver((entries) => {
+              entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                  const img = entry.target;
+                  img.src = img.dataset.src;
+                  img.classList.remove('opacity-0');
+                  img.classList.add('opacity-100');
+                  imageObserver.unobserve(img);
+                }
+              });
+            });
+
+            lazyImages.forEach(img => imageObserver.observe(img));
+          }
+        }
+      }
+
+      // Initialize when DOM is ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => {
+          new SmoothAnimations();
+        });
+      } else {
+        new SmoothAnimations();
+      }
+
+      // Service Worker for caching (optional)
+      if ('serviceWorker' in navigator && 'production' === 'production') {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js').catch(() => {
+            // Service worker registration failed
           });
         });
+      }
+    </script>
+
+    <!-- Structured Data for Website -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": "https://westgroupfinancial.com/",
+      "url": "https://westgroupfinancial.com/",
+      "name": "{title}",
+      "description": "{description}",
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": "https://westgroupfinancial.com/#website"
+      },
+      "inLanguage": "en-CA",
+      "dateModified": "2024-12-01T00:00:00+00:00"
+    }
+    </script>
+
+    <!-- Performance and analytics scripts (load async) -->
+    <!-- Google Analytics - Replace with your tracking ID -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GA_MEASUREMENT_ID', {
+        page_title: document.title,
+        page_location: window.location.href
       });
     </script>
   </body>
