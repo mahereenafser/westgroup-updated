@@ -38,7 +38,7 @@ const {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
     <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json">
+    <script type="application/ld+json" is:inline>
       {
         "@context": "https://schema.org",
         "@type": "FinancialService",
@@ -85,9 +85,10 @@ const {
       <div class="absolute top-3/4 left-1/2 w-64 h-64 bg-primary-400/5 rounded-full blur-3xl animate-float" style="animation-delay: -1.5s;"></div>
     </div>
 
-    <script>
-      // Smooth scrolling for anchor links
+    <script is:inline>
+      // Enhanced smooth scrolling and scroll animations
       document.addEventListener('DOMContentLoaded', function() {
+        // Smooth scrolling for anchor links
         const links = document.querySelectorAll('a[href^="#"]');
         links.forEach(link => {
           link.addEventListener('click', function(e) {
@@ -102,22 +103,58 @@ const {
           });
         });
 
-        // Add scroll animation observer
+        // Enhanced scroll animation observer with staggered delays
         const observerOptions = {
-          threshold: 0.1,
-          rootMargin: '0px 0px -50px 0px'
+          threshold: 0.2,
+          rootMargin: '0px 0px -80px 0px'
         };
 
         const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('animate-fade-in');
+          entries.forEach((entry, index) => {
+            if (entry.isIntersecting && !entry.target.classList.contains('animate-fade-in')) {
+              // Add staggered delay for elements in the same container
+              const delay = index * 100;
+              setTimeout(() => {
+                entry.target.classList.add('animate-fade-in');
+              }, delay);
             }
           });
         }, observerOptions);
 
+        // Observe all scroll-triggered elements
         document.querySelectorAll('.observe-scroll').forEach(el => {
           observer.observe(el);
+        });
+
+        // Performance: Throttled scroll handler
+        let ticking = false;
+        function updateScrollAnimations() {
+          // Any additional scroll-based animations can go here
+          ticking = false;
+        }
+
+        window.addEventListener('scroll', function() {
+          if (!ticking) {
+            requestAnimationFrame(updateScrollAnimations);
+            ticking = true;
+          }
+        }, { passive: true });
+
+        // Add smooth page transitions
+        const pageTransition = document.createElement('div');
+        pageTransition.className = 'fixed inset-0 bg-dark-950 z-[9999] pointer-events-none opacity-0 transition-opacity duration-500 ease-out';
+        document.body.appendChild(pageTransition);
+
+        // Enhance all buttons with subtle animations
+        const buttons = document.querySelectorAll('button, .btn-primary, .btn-secondary, .btn-accent');
+        buttons.forEach(button => {
+          button.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-2px) scale(1.02)';
+          });
+          
+          button.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0px) scale(1)';
+          });
         });
       });
     </script>
