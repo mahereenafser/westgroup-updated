@@ -173,10 +173,9 @@
     });
 
     // Close menu when clicking outside
-    document.addEventListener('click', (event) => {
-      if (isOpen && !mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target)) {
-        toggleMenu();
-      }
-    });
-  });
+  document.addEventListener('click', (event) => {
+  if (isOpen && !(mobileMenu.contains(event.target as Node)) && !(mobileMenuButton.contains(event.target as Node))) {
+    toggleMenu();
+  }
+});
 </script>
