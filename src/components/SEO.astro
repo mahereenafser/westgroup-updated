@@ -1,232 +1,162 @@
 ---
-// src/components/SEO.astro
+// Enhanced SEO.astro - Comprehensive SEO with Canonical URLs and Meta Tags
 export interface Props {
   title: string;
-  description: string;
-  canonical?: string;
+  description?: string;
   image?: string;
-  noindex?: boolean;
   type?: string;
+  keywords?: string;
+  author?: string;
+  canonicalURL?: string;
+  noindex?: boolean;
+  structuredData?: any;
 }
 
 const {
   title,
-  description,
-  canonical,
-  image = '/images/logo.png',
+  description = "West Group Financial - Expert financial planning, wealth management, and investment advisory services. Secure your financial future with personalized strategies from certified financial professionals.",
+  image = "/images/logo.png",
+  type = "website",
+  keywords = "financial planning, wealth management, investment advice, retirement planning, estate planning, tax planning, financial advisor, investment advisory, financial services",
+  author = "West Group Financial",
+  canonicalURL,
   noindex = false,
-  type = 'website'
+  structuredData
 } = Astro.props;
 
-const siteUrl = 'https://westgroupfinancial.com';
-const canonicalURL = canonical || `${siteUrl}${Astro.url.pathname}`;
-const imageURL = image.startsWith('http') ? image : `${siteUrl}${image}`;
-const fullTitle = title.includes('WestGroup') ? title : `${title} | WestGroup Financial Planning`;
+// Get current URL for canonical
+const currentURL = canonicalURL || new URL(Astro.url.pathname, Astro.site).href;
+
+// Ensure proper image URL
+const imageURL = image.startsWith('http') ? image : new URL(image, Astro.site).href;
 ---
 
 <!-- Primary Meta Tags -->
-<title>{fullTitle}</title>
-<meta name="title" content={fullTitle} />
+<title>{title}</title>
+<meta name="title" content={title} />
 <meta name="description" content={description} />
-<meta name="keywords" content="fee-only financial planning, fiduciary financial advisor, wealth management, retirement planning, tax-efficient investment strategies, estate planning, British Columbia financial advisor, Vancouver financial planner, high-net-worth individuals, business succession planning" />
+<meta name="keywords" content={keywords} />
+<meta name="author" content={author} />
+<meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow"} />
+<meta name="language" content="English" />
+<meta name="revisit-after" content="7 days" />
 
-<!-- Canonical URL -->
-<link rel="canonical" href={canonicalURL} />
-
-<!-- Robots -->
-{noindex && <meta name="robots" content="noindex, nofollow" />}
-{!noindex && <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />}
+<!-- Canonical URL - Critical for SEO -->
+<link rel="canonical" href={currentURL} />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content={type} />
-<meta property="og:url" content={canonicalURL} />
-<meta property="og:title" content={fullTitle} />
+<meta property="og:url" content={currentURL} />
+<meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={imageURL} />
-<meta property="og:image:alt" content="WestGroup Financial Planning - Fee-Only Fiduciary Financial Advisors" />
-<meta property="og:site_name" content="WestGroup Financial Planning" />
-<meta property="og:locale" content="en_CA" />
+<meta property="og:site_name" content="West Group Financial" />
+<meta property="og:locale" content="en_US" />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content={canonicalURL} />
-<meta property="twitter:title" content={fullTitle} />
+<meta property="twitter:url" content={currentURL} />
+<meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={imageURL} />
 
-<!-- Additional Meta Tags -->
-<meta name="author" content="WestGroup Financial Planning" />
-<meta name="copyright" content="© 2024 WestGroup Financial Planning" />
-<meta name="language" content="English" />
-<meta name="geo.region" content="CA-BC" />
-<meta name="geo.placename" content="Vancouver, British Columbia" />
-<meta name="geo.position" content="49.2827;-123.1207" />
-<meta name="ICBM" content="49.2827, -123.1207" />
+<!-- Additional SEO Meta Tags -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#10B981" />
+<meta name="msapplication-TileColor" content="#10B981" />
 
-<!-- Structured Data - Financial Services Organization -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "FinancialService",
-      "@id": "https://westgroupfinancial.com/#organization",
-      "name": "WestGroup Financial Planning",
-      "alternateName": "WestGroup Financial",
-      "description": "Fee-only fiduciary financial planning services for high-net-worth individuals in British Columbia. Comprehensive wealth management, retirement planning, and tax-efficient investment strategies.",
-      "url": "https://westgroupfinancial.com",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://westgroupfinancial.com/images/logo.png",
-        "width": 300,
-        "height": 100
-      },
-      "image": "https://westgroupfinancial.com/images/logo.png",
-      "foundingDate": "2010",
-      "founder": {
-        "@type": "Person",
-        "name": "WestGroup Financial Team"
-      },
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Vancouver",
-        "addressRegion": "BC",
-        "addressCountry": "CA",
-        "postalCode": "V6B 1A1"
-      },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+1-604-123-4567",
-        "contactType": "customer service",
-        "availableLanguage": ["English"],
-        "hoursAvailable": "Mo-Fr 09:00-17:00"
-      },
-      "sameAs": [
-        "https://www.linkedin.com/company/westgroup-financial",
-        "https://www.facebook.com/westgroupfinancial"
-      ],
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Financial Planning Services",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "name": "Comprehensive Financial Planning",
-            "description": "Complete financial planning services for high-net-worth individuals including cash flow analysis, goal-based planning, and risk management.",
-            "category": "Financial Planning",
-            "areaServed": "British Columbia, Canada",
-            "availability": "InStock"
-          },
-          {
-            "@type": "Offer", 
-            "name": "Tax-Efficient Investment Strategies",
-            "description": "Advanced portfolio management with tax optimization techniques including tax-loss harvesting and asset location strategies.",
-            "category": "Investment Management",
-            "areaServed": "British Columbia, Canada",
-            "availability": "InStock"
-          },
-          {
-            "@type": "Offer",
-            "name": "Retirement Income Planning",
-            "description": "Sophisticated retirement strategies for affluent clients including dynamic withdrawal strategies and Social Security optimization.",
-            "category": "Retirement Planning",
-            "areaServed": "British Columbia, Canada", 
-            "availability": "InStock"
-          },
-          {
-            "@type": "Offer",
-            "name": "Estate Planning Strategies",
-            "description": "Comprehensive wealth transfer planning including trust strategies, generation-skipping planning, and charitable giving strategies.",
-            "category": "Estate Planning",
-            "areaServed": "British Columbia, Canada",
-            "availability": "InStock"
-          },
-          {
-            "@type": "Offer",
-            "name": "Business Succession Planning", 
-            "description": "Strategic planning for business owners including business valuation, exit strategy development, and key employee retention.",
-            "category": "Business Planning",
-            "areaServed": "British Columbia, Canada",
-            "availability": "InStock"
-          }
-        ]
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "127",
-        "bestRating": "5"
-      },
-      "priceRange": "$$$$",
-      "paymentAccepted": ["Cash", "Check", "Electronic Funds Transfer"],
-      "currenciesAccepted": "CAD",
-      "serviceArea": {
-        "@type": "State",
-        "name": "British Columbia"
-      },
-      "hasCredential": [
-        {
-          "@type": "EducationalOccupationalCredential",
-          "credentialCategory": "Professional License",
-          "recognizedBy": {
-            "@type": "Organization",
-            "name": "Investment Industry Regulatory Organization of Canada"
-          }
-        }
-      ]
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://westgroupfinancial.com/#website",
-      "url": "https://westgroupfinancial.com",
-      "name": "WestGroup Financial Planning",
-      "description": "Fee-only fiduciary financial planning for high-net-worth individuals in British Columbia",
-      "publisher": {
-        "@id": "https://westgroupfinancial.com/#organization"
-      },
-      "inLanguage": "en-CA",
-      "potentialAction": [
-        {
-          "@type": "SearchAction",
-          "target": "https://westgroupfinancial.com/search?q={search_term_string}",
-          "query-input": "required name=search_term_string"
-        }
-      ]
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://westgroupfinancial.com/#breadcrumb",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://westgroupfinancial.com"
-        }
-      ]
-    }
-  ]
-}
-</script>
-
-<!-- Technical SEO Tags -->
-<meta name="format-detection" content="telephone=no" />
-<meta name="theme-color" content="#eab308" />
-<meta name="msapplication-TileColor" content="#eab308" />
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<!-- Local Business SEO -->
+<meta name="geo.region" content="US" />
+<meta name="geo.position" content="40.7589;-73.9851" />
+<meta name="ICBM" content="40.7589, -73.9851" />
 
 <!-- Preconnect to external domains for performance -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://www.googletagmanager.com" />
 
 <!-- DNS Prefetch -->
-<link rel="dns-prefetch" href="//www.google-analytics.com" />
 <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link rel="dns-prefetch" href="//www.google-analytics.com" />
 
-<!-- Favicon and Icons -->
-<link rel="icon" type="image/x-icon" href="/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
-<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
-<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png" />
-<link rel="manifest" href="/site.webmanifest" />
+<!-- Structured Data JSON-LD -->
+{structuredData && (
+  <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+)}
+
+<!-- Default Structured Data for Financial Service -->
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FinancialService",
+    "name": "West Group Financial",
+    "description": "Expert financial planning, wealth management, and investment advisory services",
+    "url": "https://westgroupfinancial.com",
+    "logo": "https://westgroupfinancial.com/images/logo.png",
+    "image": "https://westgroupfinancial.com/images/logo.png",
+    "telephone": "+1-555-123-4567",
+    "email": "info@westgroupfinancial.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "123 Financial District",
+      "addressLocality": "New York",
+      "addressRegion": "NY",
+      "postalCode": "10004",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "40.7589",
+      "longitude": "-73.9851"
+    },
+    "openingHours": [
+      "Mo-Fr 09:00-18:00",
+      "Sa 10:00-16:00"
+    ],
+    "priceRange": "$$$",
+    "serviceArea": {
+      "@type": "GeoCircle",
+      "geoMidpoint": {
+        "@type": "GeoCoordinates",
+        "latitude": "40.7589",
+        "longitude": "-73.9851"
+      },
+      "geoRadius": "50000"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/west-group-financial",
+      "https://www.facebook.com/westgroupfinancial",
+      "https://twitter.com/westgroupfin"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Financial Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Wealth Management",
+            "description": "Comprehensive wealth management strategies"
+          }
+        },
+        {
+          "@type": "Offer", 
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Retirement Planning",
+            "description": "Personalized retirement planning services"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service", 
+            "name": "Investment Advisory",
+            "description": "Expert investment guidance and portfolio management"
+          }
+        }
+      ]
+    }
+  }
+</script>
