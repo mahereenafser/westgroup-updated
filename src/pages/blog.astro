@@ -1,10 +1,23 @@
 ---
+// Blog.astro - Complete file with all fixes for missing closing tags and TypeScript errors
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+
+const seoData = {
+  title: "Financial Planning Blog - Investment Tips, Market Insights & Retirement Advice",
+  description: "Stay informed with expert financial insights, investment strategies, market analysis, and retirement planning tips from West Group Financial's certified professionals.",
+  keywords: "financial planning blog, investment tips, market insights, retirement advice, financial news, wealth management blog, investment strategies, financial education",
+  canonicalURL: "https://westgroupfinancial.com/blog"
+};
 ---
 
-<Layout title="Financial Blog - West Group Financial">
+<Layout 
+  title={seoData.title}
+  description={seoData.description}
+  keywords={seoData.keywords}
+  canonicalURL={seoData.canonicalURL}
+>
   <Header />
   
   <main class="pt-16">
@@ -48,7 +61,7 @@ import Footer from '../components/Footer.astro';
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           
-          <!-- Blog Post 1 - Fixed closing tags -->
+          <!-- Blog Post 1 - Fixed all closing tags -->
           <article class="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl overflow-hidden hover-lift fade-in stagger-1 blog-article" data-category="investment">
             <div class="h-48 bg-gradient-to-br from-green-400/20 to-yellow-400/20 flex items-center justify-center border-b border-slate-700/50">
               <div class="w-16 h-16 bg-gradient-to-r from-green-400 to-yellow-400 rounded-full flex items-center justify-center">
@@ -66,6 +79,97 @@ import Footer from '../components/Footer.astro';
               <h3 class="text-xl font-semibold mb-3 text-white">Diversification Strategies for 2025</h3>
               <p class="text-gray-300 mb-4">Learn how to build a well-diversified portfolio that can weather market volatility and position you for long-term growth in the new year.</p>
               <a href="#" class="inline-flex items-center text-green-400 hover:text-green-300 font-medium">
+                Read More
+                <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-16 bg-gradient-to-r from-green-400/10 to-yellow-400/10">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white fade-in">
+          Stay Updated with Financial Insights
+        </h2>
+        <p class="text-xl text-gray-300 mb-8 fade-in stagger-1">
+          Subscribe to our newsletter for weekly financial tips, market updates, and exclusive insights from our expert team.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto fade-in stagger-2">
+          <input 
+            type="email" 
+            placeholder="Enter your email" 
+            class="flex-1 px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-gray-400 focus:border-green-400 focus:ring-1 focus:ring-green-400 transition-colors"
+          />
+          <button class="bg-gradient-to-r from-green-400 to-yellow-400 text-slate-900 font-semibold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity">
+            Subscribe
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+
+  <!-- Filter functionality script - Fixed TypeScript errors -->
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', function() {
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const articles = document.querySelectorAll('.blog-article');
+
+      filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const category = this.getAttribute('data-filter');
+          
+          // Update active button
+          filterButtons.forEach(btn => {
+            btn.classList.remove('active', 'bg-gradient-to-r', 'from-green-400', 'to-yellow-400', 'text-slate-900');
+            btn.classList.add('bg-slate-700', 'text-white');
+          });
+          
+          this.classList.add('active', 'bg-gradient-to-r', 'from-green-400', 'to-yellow-400', 'text-slate-900');
+          this.classList.remove('bg-slate-700', 'text-white');
+
+          // Filter articles - Fixed TypeScript errors
+          articles.forEach(article => {
+            const element = article as HTMLElement;
+            const articleCategory = element.dataset.category;
+            if (category === 'all' || articleCategory === category) {
+              element.style.display = 'block';
+            } else {
+              element.style.display = 'none';
+            }
+          });
+        });
+      });
+    });
+  </script>
+
+  <!-- Schema.org structured data -->
+  <script is:inline type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "West Group Financial Blog",
+      "@id": "https://westgroupfinancial.com/blog",
+      "url": "https://westgroupfinancial.com/blog",
+      "description": "Financial insights, investment strategies, and market analysis from West Group Financial experts",
+      "publisher": {
+        "@type": "Organization",
+        "name": "West Group Financial",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://westgroupfinancial.com/images/logo.png"
+        }
+      }
+    }
+  </script>
+</Layout> text-green-400 hover:text-green-300 font-medium">
                 Read More
                 <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
@@ -126,7 +230,7 @@ import Footer from '../components/Footer.astro';
             </div>
           </article>
 
-          <!-- Blog Post 4 - Fixed closing tags -->
+          <!-- Blog Post 4 - Fixed all closing tags -->
           <article class="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl overflow-hidden hover-lift fade-in stagger-4 blog-article" data-category="estate">
             <div class="h-48 bg-gradient-to-br from-green-400/20 to-yellow-400/20 flex items-center justify-center border-b border-slate-700/50">
               <div class="w-16 h-16 bg-gradient-to-r from-green-400 to-yellow-400 rounded-full flex items-center justify-center">
@@ -153,62 +257,47 @@ import Footer from '../components/Footer.astro';
             </div>
           </article>
 
-        </div>
-      </div>
-    </section>
-  </main>
+          <!-- Blog Post 5 -->
+          <article class="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl overflow-hidden hover-lift fade-in stagger-1 blog-article" data-category="investment">
+            <div class="h-48 bg-gradient-to-br from-purple-400/20 to-pink-400/20 flex items-center justify-center border-b border-slate-700/50">
+              <div class="w-16 h-16 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full flex items-center justify-center">
+                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"/>
+                </svg>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center text-sm text-gray-400 mb-3">
+                <span>December 5, 2024</span>
+                <span class="mx-2">•</span>
+                <span>4 min read</span>
+              </div>
+              <h3 class="text-xl font-semibold mb-3 text-white">Market Outlook for 2025</h3>
+              <p class="text-gray-300 mb-4">Our analysts share their insights on market trends and investment opportunities to watch in the coming year.</p>
+              <a href="#" class="inline-flex items-center text-green-400 hover:text-green-300 font-medium">
+                Read More
+                <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+          </article>
 
-  <Footer />
-
-  <!-- Filter functionality script - Fixed TypeScript errors -->
-  <script is:inline>
-    document.addEventListener('DOMContentLoaded', function() {
-      const filterButtons = document.querySelectorAll('.filter-btn');
-      const articles = document.querySelectorAll('.blog-article');
-
-      filterButtons.forEach(button => {
-        button.addEventListener('click', function() {
-          const category = this.getAttribute('data-filter');
-          
-          // Update active button
-          filterButtons.forEach(btn => btn.classList.remove('active', 'bg-gradient-to-r', 'from-green-400', 'to-yellow-400', 'text-slate-900'));
-          filterButtons.forEach(btn => btn.classList.add('bg-slate-700', 'text-white'));
-          
-          this.classList.add('active', 'bg-gradient-to-r', 'from-green-400', 'to-yellow-400', 'text-slate-900');
-          this.classList.remove('bg-slate-700', 'text-white');
-
-          // Filter articles - Fixed TypeScript errors
-          articles.forEach((article: Element) => {
-            const element = article as HTMLElement;
-            const articleCategory = element.dataset.category;
-            if (category === 'all' || articleCategory === category) {
-              element.style.display = 'block';
-            } else {
-              element.style.display = 'none';
-            }
-          });
-        });
-      });
-    });
-  </script>
-
-  <!-- Schema.org structured data -->
-  <script is:inline type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Blog",
-      "name": "West Group Financial Blog",
-      "@id": "https://westgroupfinancial.com/blog",
-      "url": "https://westgroupfinancial.com/blog",
-      "description": "Financial insights, investment strategies, and market analysis from West Group Financial experts",
-      "publisher": {
-        "@type": "Organization",
-        "name": "West Group Financial",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://westgroupfinancial.com/images/logo.png"
-        }
-      }
-    }
-  </script>
-</Layout>
+          <!-- Blog Post 6 -->
+          <article class="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl overflow-hidden hover-lift fade-in stagger-2 blog-article" data-category="retirement">
+            <div class="h-48 bg-gradient-to-br from-teal-400/20 to-cyan-400/20 flex items-center justify-center border-b border-slate-700/50">
+              <div class="w-16 h-16 bg-gradient-to-r from-teal-400 to-cyan-400 rounded-full flex items-center justify-center">
+                <svg class="w-8 h-8 text-slate-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M3 6a3 3 0 013-3h10a1 1 0 01.8 1.6L14.25 8l2.55 3.4A1 1 0 0116 13H6a1 1 0 00-1 1v3a1 1 0 11-2 0V6z" clip-rule="evenodd"/>
+                </svg>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center text-sm text-gray-400 mb-3">
+                <span>December 3, 2024</span>
+                <span class="mx-2">•</span>
+                <span>6 min read</span>
+              </div>
+              <h3 class="text-xl font-semibold mb-3 text-white">Social Security Optimization</h3>
+              <p class="text-gray-300 mb-4">Maximize your Social Security benefits with strategic timing and planning considerations for your retirement income.</p>
+              <a href="#" class="inline-flex items-center
