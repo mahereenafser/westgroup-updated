@@ -1,10 +1,23 @@
 ---
+// Services.astro - Complete file with all missing closing tags fixed
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+
+const seoData = {
+  title: "Financial Services - Wealth Management, Investment & Retirement Planning",
+  description: "Comprehensive financial services including wealth management, retirement planning, investment advisory, estate planning, and tax strategies. Expert guidance for your financial future.",
+  keywords: "financial services, wealth management services, retirement planning services, investment advisory, estate planning, tax planning, insurance services, financial consultation",
+  canonicalURL: "https://westgroupfinancial.com/services"
+};
 ---
 
-<Layout title="Financial Services - West Group Financial">
+<Layout 
+  title={seoData.title}
+  description={seoData.description}
+  keywords={seoData.keywords}
+  canonicalURL={seoData.canonicalURL}
+>
   <Header />
   
   <main class="pt-16">
@@ -20,12 +33,42 @@ import Footer from '../components/Footer.astro';
       </div>
     </section>
 
+    <!-- Services Overview -->
+    <section class="py-16 bg-slate-800/30">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white fade-in">
+            Our Expertise
+          </h2>
+          <p class="text-xl text-gray-300 max-w-3xl mx-auto fade-in stagger-1">
+            From wealth management to retirement planning, our certified financial professionals provide personalized strategies to help you achieve your financial objectives.
+          </p>
+        </div>
+        
+        <!-- Statistics -->
+        <div class="grid md:grid-cols-3 gap-8 mb-16">
+          <div class="text-center fade-in stagger-1">
+            <div class="text-4xl font-bold text-green-400 mb-2">20+</div>
+            <div class="text-gray-300">Years Experience</div>
+          </div>
+          <div class="text-center fade-in stagger-2">
+            <div class="text-4xl font-bold text-green-400 mb-2">500+</div>
+            <div class="text-gray-300">Satisfied Clients</div>
+          </div>
+          <div class="text-center fade-in stagger-3">
+            <div class="text-4xl font-bold text-green-400 mb-2">$100M+</div>
+            <div class="text-gray-300">Assets Under Management</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Services Grid -->
     <section class="py-16">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           
-          <!-- Service 1: Wealth Management -->
+          <!-- Service 1: Wealth Management - Fixed all closing tags -->
           <div class="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 hover:border-green-400/30 transition-all duration-500 hover:shadow-2xl hover:shadow-green-400/10 hover-lift fade-in stagger-1">
             <div class="w-16 h-16 bg-gradient-to-r from-green-400 to-yellow-400 rounded-full flex items-center justify-center mb-6">
               <svg class="w-8 h-8 text-slate-900" fill="currentColor" viewBox="0 0 20 20">
@@ -124,7 +167,7 @@ import Footer from '../components/Footer.astro';
             </a>
           </div>
 
-          <!-- Service 4: Estate Planning - Fixed closing tags -->
+          <!-- Service 4: Estate Planning - Fixed all closing tags -->
           <div class="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 hover:border-green-400/30 transition-all duration-500 hover:shadow-2xl hover:shadow-green-400/10 hover-lift fade-in stagger-4">
             <div class="w-16 h-16 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full flex items-center justify-center mb-6">
               <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
@@ -161,4 +204,173 @@ import Footer from '../components/Footer.astro';
           <!-- Service 5: Tax Planning -->
           <div class="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 hover:border-green-400/30 transition-all duration-500 hover:shadow-2xl hover:shadow-green-400/10 hover-lift fade-in stagger-1">
             <div class="w-16 h-16 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full flex items-center justify-center mb-6">
-              <svg class="w-8
+              <svg class="w-8 h-8 text-slate-900" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold mb-4 text-white">Tax Planning</h3>
+            <p class="text-gray-300 mb-6">
+              Strategic tax planning to minimize your tax liability and maximize your after-tax income through legal strategies.
+            </p>
+            <ul class="text-sm text-gray-400 space-y-2 mb-6">
+              <li class="flex items-center">
+                <span class="w-1.5 h-1.5 bg-yellow-400 rounded-full mr-3"></span>
+                Tax-loss harvesting strategies
+              </li>
+              <li class="flex items-center">
+                <span class="w-1.5 h-1.5 bg-yellow-400 rounded-full mr-3"></span>
+                Retirement account optimization
+              </li>
+              <li class="flex items-center">
+                <span class="w-1.5 h-1.5 bg-yellow-400 rounded-full mr-3"></span>
+                Year-end tax planning
+              </li>
+            </ul>
+            <a href="/contact" class="inline-flex items-center text-yellow-400 hover:text-yellow-300 font-medium">
+              Learn More
+              <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Service 6: Insurance Services -->
+          <div class="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 hover:border-green-400/30 transition-all duration-500 hover:shadow-2xl hover:shadow-green-400/10 hover-lift fade-in stagger-2">
+            <div class="w-16 h-16 bg-gradient-to-r from-teal-400 to-cyan-400 rounded-full flex items-center justify-center mb-6">
+              <svg class="w-8 h-8 text-slate-900" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M3 6a3 3 0 013-3h10a1 1 0 01.8 1.6L14.25 8l2.55 3.4A1 1 0 0116 13H6a1 1 0 00-1 1v3a1 1 0 11-2 0V6z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold mb-4 text-white">Insurance Services</h3>
+            <p class="text-gray-300 mb-6">
+              Comprehensive insurance solutions to protect you, your family, and your assets from unexpected events.
+            </p>
+            <ul class="text-sm text-gray-400 space-y-2 mb-6">
+              <li class="flex items-center">
+                <span class="w-1.5 h-1.5 bg-teal-400 rounded-full mr-3"></span>
+                Life and disability insurance
+              </li>
+              <li class="flex items-center">
+                <span class="w-1.5 h-1.5 bg-teal-400 rounded-full mr-3"></span>
+                Long-term care planning
+              </li>
+              <li class="flex items-center">
+                <span class="w-1.5 h-1.5 bg-teal-400 rounded-full mr-3"></span>
+                Umbrella policy coverage
+              </li>
+            </ul>
+            <a href="/contact" class="inline-flex items-center text-teal-400 hover:text-teal-300 font-medium">
+              Learn More
+              <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="py-16 bg-slate-800/30">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white fade-in">
+            Our Process
+          </h2>
+          <p class="text-xl text-gray-300 max-w-3xl mx-auto fade-in stagger-1">
+            We follow a proven methodology to understand your unique situation and develop personalized financial strategies.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-4 gap-8">
+          <div class="text-center fade-in stagger-1">
+            <div class="w-16 h-16 bg-gradient-to-r from-green-400 to-yellow-400 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-2xl font-bold text-slate-900">1</span>
+            </div>
+            <h3 class="text-xl font-semibold mb-3 text-white">Discovery</h3>
+            <p class="text-gray-300">We learn about your goals, concerns, and current financial situation.</p>
+          </div>
+          
+          <div class="text-center fade-in stagger-2">
+            <div class="w-16 h-16 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-2xl font-bold text-white">2</span>
+            </div>
+            <h3 class="text-xl font-semibold mb-3 text-white">Analysis</h3>
+            <p class="text-gray-300">We analyze your finances and identify opportunities and potential risks.</p>
+          </div>
+          
+          <div class="text-center fade-in stagger-3">
+            <div class="w-16 h-16 bg-gradient-to-r from-red-400 to-orange-400 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-2xl font-bold text-white">3</span>
+            </div>
+            <h3 class="text-xl font-semibold mb-3 text-white">Strategy</h3>
+            <p class="text-gray-300">We develop a customized financial plan tailored to your specific needs.</p>
+          </div>
+          
+          <div class="text-center fade-in stagger-4">
+            <div class="w-16 h-16 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-2xl font-bold text-white">4</span>
+            </div>
+            <h3 class="text-xl font-semibold mb-3 text-white">Implementation</h3>
+            <p class="text-gray-300">We execute your plan and provide ongoing monitoring and adjustments.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-r from-green-400/10 to-yellow-400/10">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white fade-in">
+          Ready to Take Control of Your Financial Future?
+        </h2>
+        <p class="text-xl text-gray-300 mb-8 fade-in stagger-1">
+          Schedule a complimentary consultation with our financial experts and discover how we can help you achieve your goals.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center fade-in stagger-2">
+          <a 
+            href="/contact" 
+            class="bg-gradient-to-r from-green-400 to-yellow-400 text-slate-900 font-semibold py-4 px-8 rounded-lg hover:opacity-90 transition-opacity"
+          >
+            Schedule Consultation
+          </a>
+          <a 
+            href="/calculator" 
+            class="border border-green-400 text-green-400 font-semibold py-4 px-8 rounded-lg hover:bg-green-400/10 transition-colors"
+          >
+            Try Our Calculator
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+
+  <!-- Schema.org structured data -->
+  <script is:inline type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "West Group Financial Services",
+      "@id": "https://westgroupfinancial.com/services",
+      "url": "https://westgroupfinancial.com/services",
+      "description": "Comprehensive financial services including wealth management, retirement planning, investment advisory, estate planning, tax planning, and insurance services",
+      "provider": {
+        "@type": "FinancialService",
+        "name": "West Group Financial",
+        "logo": "https://westgroupfinancial.com/images/logo.png"
+      },
+      "serviceType": [
+        "Wealth Management",
+        "Retirement Planning", 
+        "Investment Advisory",
+        "Estate Planning",
+        "Tax Planning",
+        "Insurance Services"
+      ],
+      "areaServed": "United States"
+    }
+  </script>
+</Layout>
