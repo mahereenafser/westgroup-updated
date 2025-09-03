@@ -1,4 +1,5 @@
 ---
+// Layout.astro - Complete file with all TypeScript fixes
 import SEO from '../components/SEO.astro';
 
 export interface Props {
@@ -6,9 +7,18 @@ export interface Props {
   description?: string;
   image?: string;
   type?: string;
+  keywords?: string;
+  canonicalURL?: string;
 }
 
-const { title, description = "West Group Financial - Expert financial guidance for your future", image, type = "website" } = Astro.props;
+const { 
+  title, 
+  description = "West Group Financial - Expert financial guidance for your future", 
+  image, 
+  type = "website",
+  keywords,
+  canonicalURL
+} = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -23,6 +33,8 @@ const { title, description = "West Group Financial - Expert financial guidance f
       description={description}
       image={image}
       type={type}
+      keywords={keywords}
+      canonicalURL={canonicalURL}
     />
 
     <!-- Preload critical resources -->
@@ -102,8 +114,8 @@ const { title, description = "West Group Financial - Expert financial guidance f
           observer.observe(el);
         });
 
-        // Hover effects for lift elements
-        document.querySelectorAll('.hover-lift').forEach((el: Element) => {
+        // Hover effects for lift elements - Fixed TypeScript errors
+        document.querySelectorAll('.hover-lift').forEach(el => {
           const element = el as HTMLElement;
           element.addEventListener('mouseenter', function() {
             element.style.transform = 'translateY(-2px) translateZ(0)';
@@ -114,7 +126,7 @@ const { title, description = "West Group Financial - Expert financial guidance f
           });
         });
 
-        // Lazy loading for images
+        // Lazy loading for images - Fixed TypeScript errors
         if ('IntersectionObserver' in window) {
           const imageObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -165,6 +177,7 @@ const { title, description = "West Group Financial - Expert financial guidance f
     <!-- Google Analytics - Fixed TypeScript errors -->
     <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
     <script is:inline>
+      // Fixed TypeScript declarations
       declare global {
         interface Window {
           dataLayer: any[];
