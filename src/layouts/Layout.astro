@@ -1,289 +1,181 @@
 ---
-// src/layouts/Layout.astro
 import SEO from '../components/SEO.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
 
 export interface Props {
   title: string;
-  description: string;
-  canonical?: string;
+  description?: string;
   image?: string;
-  noindex?: boolean;
   type?: string;
 }
 
-const { title, description, canonical, image, noindex, type } = Astro.props;
+const { title, description = "West Group Financial - Expert financial guidance for your future", image, type = "website" } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en-CA" class="scroll-smooth">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <meta name="generator" content={Astro.generator} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     
-    <!-- SEO Component -->
     <SEO 
       title={title}
       description={description}
-      canonical={canonical}
       image={image}
-      noindex={noindex}
       type={type}
     />
 
     <!-- Preload critical resources -->
-    <link rel="preload" href="/fonts/PlayfairDisplay-Bold.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="/fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/images/logo.png" as="image" />
-
-    <!-- Critical CSS for above-fold content -->
+    
+    <!-- Critical CSS -->
     <style>
-      /* Critical CSS - Above the fold styles */
-      .preload-hidden { opacity: 0; }
-      .preload-visible { opacity: 1; transition: opacity 0.3s ease; }
-      
-      /* Smooth animation base */
-      * {
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-      }
-      
-      html {
-        scroll-behavior: smooth;
-      }
-      
-      body {
-        padding-top: 120px; /* Account for fixed header */
-      }
-      
-      @media (max-width: 768px) {
-        body {
-          padding-top: 100px;
-        }
-      }
-
-      /* Reduce motion for users who prefer it */
-      @media (prefers-reduced-motion: reduce) {
-        *,
-        *::before,
-        *::after {
-          animation-duration: 0.01ms !important;
-          animation-iteration-count: 1 !important;
-          transition-duration: 0.01ms !important;
-          scroll-behavior: auto !important;
-        }
-        
-        html {
-          scroll-behavior: auto;
-        }
-      }
-
-      /* Smooth animations with hardware acceleration */
-      .animate-smooth {
-        will-change: transform, opacity;
-        transform: translateZ(0);
-        backface-visibility: hidden;
-        perspective: 1000px;
-      }
-
-      /* Improved hover animations */
-      .hover-lift {
-        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      }
-      
-      .hover-lift:hover {
-        transform: translateY(-2px) translateZ(0);
-      }
-
-      /* Smooth fade-in animation */
       .fade-in {
         opacity: 0;
         transform: translateY(20px);
-        transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), 
-                    transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: opacity 0.6s ease, transform 0.6s ease;
       }
-      
       .fade-in.visible {
         opacity: 1;
         transform: translateY(0);
       }
-
-      /* Stagger animation delays for lists */
       .stagger-1 { transition-delay: 0.1s; }
       .stagger-2 { transition-delay: 0.2s; }
       .stagger-3 { transition-delay: 0.3s; }
       .stagger-4 { transition-delay: 0.4s; }
-      .stagger-5 { transition-delay: 0.5s; }
-      .stagger-6 { transition-delay: 0.6s; }
+      .hover-lift {
+        transition: transform 0.3s ease;
+      }
+      .hover-lift:hover {
+        transform: translateY(-2px);
+      }
+      
+      /* Loading skeleton */
+      .skeleton {
+        background: linear-gradient(90deg, #1e293b 25%, #334155 50%, #1e293b 75%);
+        background-size: 200% 100%;
+        animation: loading 1.5s infinite;
+      }
+      @keyframes loading {
+        0% { background-position: 200% 0; }
+        100% { background-position: -200% 0; }
+      }
     </style>
-
-    <!-- Google Fonts with display=swap for performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   </head>
-
-  <body class="bg-slate-900 text-white font-['Inter'] antialiased">
-    <!-- Skip to main content for accessibility -->
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-yellow-400 text-slate-900 px-4 py-2 rounded-lg font-semibold z-50 transition-all duration-200">
-      Skip to main content
-    </a>
-
-    <!-- Header -->
-    <Header />
-
-    <!-- Main Content -->
-    <main id="main-content" class="min-h-screen">
-      <slot />
-    </main>
-
-    <!-- Footer -->
-    <Footer />
-
-    <!-- Global Scripts -->
-    <script>
-      // Smooth scroll animation observer
-      class SmoothAnimations {
-        constructor() {
-          this.init();
-        }
-
-        init() {
-          // Remove preload state
-          this.removePreloadState();
-          
-          // Initialize intersection observer for fade-in animations
-          this.initScrollAnimations();
-          
-          // Initialize smooth hover effects
-          this.initHoverEffects();
-          
-          // Performance optimization
-          this.optimizePerformance();
-        }
-
-        removePreloadState() {
-          document.body.classList.remove('preload-hidden');
-          document.body.classList.add('preload-visible');
-        }
-
-        initScrollAnimations() {
-          // Only initialize if user hasn't requested reduced motion
-          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-            return;
+  <body class="bg-slate-900 text-white min-h-screen">
+    <slot />
+    
+    <!-- Performance monitoring -->
+    <script is:inline>
+      // Performance monitoring
+      if ('performance' in window && 'PerformanceObserver' in window) {
+        const observer = new PerformanceObserver((list) => {
+          for (const entry of list.getEntries()) {
+            if (entry.entryType === 'largest-contentful-paint') {
+              console.log('LCP:', entry.startTime);
+            }
           }
+        });
+        observer.observe({ entryTypes: ['largest-contentful-paint'] });
+      }
+    </script>
 
-          const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-              }
-            });
-          }, {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-          });
+    <!-- Intersection Observer for animations -->
+    <script is:inline>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Animation observer
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: '0px 0px -50px 0px'
+        };
 
-          // Observe all elements with fade-in class
-          document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-          });
-        }
-
-        initHoverEffects() {
-          // Add smooth hover effects to cards and buttons
-          const hoverElements = document.querySelectorAll('.hover-lift');
-          
-          hoverElements.forEach(el => {
-            el.addEventListener('mouseenter', () => {
-              el.style.transform = 'translateY(-2px) translateZ(0)';
-            });
-            
-            el.addEventListener('mouseleave', () => {
-              el.style.transform = 'translateY(0) translateZ(0)';
-            });
-          });
-        }
-
-        optimizePerformance() {
-          // Use requestAnimationFrame for smooth animations
-          let ticking = false;
-          
-          window.addEventListener('scroll', () => {
-            if (!ticking) {
-              requestAnimationFrame(() => {
-                // Handle scroll-based animations here
-                ticking = false;
-              });
-              ticking = true;
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
             }
           });
+        }, observerOptions);
 
-          // Lazy load non-critical resources
-          if ('IntersectionObserver' in window) {
-            const lazyImages = document.querySelectorAll('img[data-src]');
-            const imageObserver = new IntersectionObserver((entries) => {
-              entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                  const img = entry.target;
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+          observer.observe(el);
+        });
+
+        // Hover effects for lift elements
+        document.querySelectorAll('.hover-lift').forEach((el: Element) => {
+          const element = el as HTMLElement;
+          element.addEventListener('mouseenter', function() {
+            element.style.transform = 'translateY(-2px) translateZ(0)';
+          });
+          
+          element.addEventListener('mouseleave', function() {
+            element.style.transform = 'translateY(0) translateZ(0)';
+          });
+        });
+
+        // Lazy loading for images
+        if ('IntersectionObserver' in window) {
+          const imageObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                const img = entry.target as HTMLImageElement;
+                if (img.dataset.src) {
                   img.src = img.dataset.src;
-                  img.classList.remove('opacity-0');
-                  img.classList.add('opacity-100');
+                  img.classList.remove('skeleton');
                   imageObserver.unobserve(img);
                 }
-              });
+              }
             });
+          });
 
-            lazyImages.forEach(img => imageObserver.observe(img));
-          }
+          document.querySelectorAll('img[data-src]').forEach(img => {
+            imageObserver.observe(img);
+          });
+        }
+      });
+    </script>
+
+    <!-- Schema.org structured data -->
+    <script is:inline type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FinancialService",
+        "name": "West Group Financial",
+        "description": "Expert financial guidance and wealth management services",
+        "url": "https://westgroupfinancial.com",
+        "logo": "https://westgroupfinancial.com/images/logo.png",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+1-555-123-4567",
+          "contactType": "customer service",
+          "availableLanguage": "English"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/company/west-group-financial",
+          "https://www.facebook.com/westgroupfinancial"
+        ]
+      }
+    </script>
+
+    <!-- Google Analytics - Fixed TypeScript errors -->
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script is:inline>
+      declare global {
+        interface Window {
+          dataLayer: any[];
+          gtag: (...args: any[]) => void;
         }
       }
 
-      // Initialize when DOM is ready
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', () => {
-          new SmoothAnimations();
-        });
-      } else {
-        new SmoothAnimations();
-      }
-
-      // Service Worker for caching (optional)
-      if ('serviceWorker' in navigator && 'production' === 'production') {
-        window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/sw.js').catch(() => {
-            // Service worker registration failed
-          });
-        });
-      }
-    </script>
-
-    <!-- Structured Data for Website -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "@id": "https://westgroupfinancial.com/",
-      "url": "https://westgroupfinancial.com/",
-      "name": "{title}",
-      "description": "{description}",
-      "isPartOf": {
-        "@type": "WebSite",
-        "@id": "https://westgroupfinancial.com/#website"
-      },
-      "inLanguage": "en-CA",
-      "dateModified": "2024-12-01T00:00:00+00:00"
-    }
-    </script>
-
-    <!-- Performance and analytics scripts (load async) -->
-    <!-- Google Analytics - Replace with your tracking ID -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-    <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+      function gtag(...args: any[]) {
+        window.dataLayer.push(args);
+      }
       gtag('js', new Date());
       gtag('config', 'GA_MEASUREMENT_ID', {
         page_title: document.title,
