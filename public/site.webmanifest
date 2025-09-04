@@ -1,0 +1,131 @@
+{
+  "name": "WestGroup Financial Management - Fee-Only Fiduciary Financial Planning",
+  "short_name": "WestGroup Financial",
+  "description": "Premier fee-only fiduciary financial planning services for high-net-worth individuals and families in British Columbia. Expert wealth management, tax-efficient investment strategies, and comprehensive retirement planning.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#eab308",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en-CA",
+  "dir": "ltr",
+  "categories": ["finance", "business", "lifestyle"],
+  "icons": [
+    {
+      "src": "/images/icons/android-chrome-192x192.webp",
+      "sizes": "192x192",
+      "type": "image/webp",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/images/icons/android-chrome-512x512.webp",
+      "sizes": "512x512",
+      "type": "image/webp",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/images/icons/apple-touch-icon.webp",
+      "sizes": "180x180",
+      "type": "image/webp",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/icons/favicon-32x32.webp",
+      "sizes": "32x32",
+      "type": "image/webp",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/icons/favicon-16x16.webp",
+      "sizes": "16x16",
+      "type": "image/webp",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/icons/maskable-icon-192x192.webp",
+      "sizes": "192x192",
+      "type": "image/webp",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/images/icons/maskable-icon-512x512.webp",
+      "sizes": "512x512",
+      "type": "image/webp",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Contact Us",
+      "short_name": "Contact",
+      "description": "Schedule a free financial consultation",
+      "url": "/contact/",
+      "icons": [
+        {
+          "src": "/images/icons/contact-shortcut.webp",
+          "sizes": "96x96",
+          "type": "image/webp"
+        }
+      ]
+    },
+    {
+      "name": "Financial Calculator",
+      "short_name": "Calculator",
+      "description": "Use our financial planning calculators",
+      "url": "/calculator/",
+      "icons": [
+        {
+          "src": "/images/icons/calculator-shortcut.webp",
+          "sizes": "96x96",
+          "type": "image/webp"
+        }
+      ]
+    },
+    {
+      "name": "Our Services",
+      "short_name": "Services",
+      "description": "Explore our financial planning services",
+      "url": "/services/",
+      "icons": [
+        {
+          "src": "/images/icons/services-shortcut.webp",
+          "sizes": "96x96",
+          "type": "image/webp"
+        }
+      ]
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "screenshots": [
+    {
+      "src": "/images/screenshots/homepage-desktop.webp",
+      "sizes": "1280x720",
+      "type": "image/webp",
+      "form_factor": "wide",
+      "label": "WestGroup Financial Homepage"
+    },
+    {
+      "src": "/images/screenshots/services-desktop.webp",
+      "sizes": "1280x720",
+      "type": "image/webp",
+      "form_factor": "wide",
+      "label": "Financial Planning Services"
+    },
+    {
+      "src": "/images/screenshots/calculator-desktop.webp",
+      "sizes": "1280x720",
+      "type": "image/webp",
+      "form_factor": "wide",
+      "label": "Financial Planning Calculators"
+    },
+    {
+      "src": "/images/screenshots/homepage-mobile.webp",
+      "sizes": "360x640",
+      "type": "image/webp",
+      "form_factor": "narrow",
+      "label": "WestGroup Financial Mobile"
+    }
+  ]
+}
