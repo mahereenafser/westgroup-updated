@@ -23,7 +23,7 @@ body {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   line-height: 1.6;
   color: #f8fafc;
-  background-color: #0f172a;
+  background-color: #0f172a; /* Dark background for the theme */
   overflow-x: hidden;
   padding-top: 120px; /* Account for fixed header */
 }
