@@ -1,5 +1,5 @@
 ---
-// Index.astro - SEO Optimized Homepage with enhanced meta tags and WebP images
+// Index.astro - Fixed SEO prop issues
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
@@ -11,7 +11,6 @@ const seoData = {
   keywords: "fee-only financial planning British Columbia, fiduciary financial advisor BC, wealth management Vancouver Surrey, tax-efficient investment strategies, retirement income planning, estate planning strategies, business succession planning BC, comprehensive financial planning, investment portfolio management, financial planning for entrepreneurs, high-net-worth financial planning Surrey",
   canonicalURL: "https://westgroupfinancial.com/",
   image: "/images/homepage-hero.webp",
-  publishedTime: "2024-01-01T00:00:00+00:00",
   modifiedTime: new Date().toISOString(),
   section: "Financial Planning",
   tags: ["financial planning", "wealth management", "investment advice", "retirement planning", "British Columbia"],
@@ -143,7 +142,6 @@ const seoData = {
   keywords={seoData.keywords}
   canonicalURL={seoData.canonicalURL}
   image={seoData.image}
-  publishedTime={seoData.publishedTime}
   modifiedTime={seoData.modifiedTime}
   section={seoData.section}
   tags={seoData.tags}
