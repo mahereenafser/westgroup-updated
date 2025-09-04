@@ -1,5 +1,5 @@
 ---
-// Services.astro - SEO Optimized Services Page with enhanced meta tags and WebP images
+// Services.astro - Fixed SEO prop issues
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -10,7 +10,6 @@ const seoData = {
   keywords: "comprehensive financial planning services BC, wealth management services Vancouver, retirement income planning Surrey, tax-efficient investment strategies, estate planning strategies British Columbia, business succession planning, investment portfolio management, financial planning for entrepreneurs BC, fee-only financial advisor services",
   canonicalURL: "https://westgroupfinancial.com/services/",
   image: "/images/services-hero.webp",
-  publishedTime: "2024-01-01T00:00:00+00:00",
   modifiedTime: new Date().toISOString(),
   section: "Financial Services",
   tags: ["financial services", "wealth management", "retirement planning", "tax planning", "estate planning", "investment management"],
@@ -67,40 +66,7 @@ const seoData = {
         "@type": "City",
         "name": "Richmond"
       }
-    ],
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Financial Planning Services",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Comprehensive Financial Planning",
-            "description": "Complete financial planning strategies tailored for high-net-worth individuals and families",
-            "category": "Financial Planning"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Tax-Efficient Investment Strategies",
-            "description": "Strategic investment planning to minimize tax burden and maximize after-tax returns",
-            "category": "Investment Management"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Retirement Income Planning",
-            "description": "Comprehensive retirement planning and sustainable income strategies for life after work",
-            "category": "Retirement Planning"
-          }
-        }
-      ]
-    }
+    ]
   }
 };
 ---
@@ -111,7 +77,6 @@ const seoData = {
   keywords={seoData.keywords}
   canonicalURL={seoData.canonicalURL}
   image={seoData.image}
-  publishedTime={seoData.publishedTime}
   modifiedTime={seoData.modifiedTime}
   section={seoData.section}
   tags={seoData.tags}
@@ -177,142 +142,6 @@ const seoData = {
               <picture>
                 <source srcset="/images/icons/comprehensive-planning.webp" type="image/webp">
                 <img src="/images/icons/comprehensive-planning.png" alt="Comprehensive Financial Planning" class="w-8 h-8" loading="lazy">
-              </picture>
-            </div>
-            <h3 class="text-2xl font-bold mb-4 text-white">Comprehensive Financial Planning</h3>
-            <p class="text-gray-300 mb-6">
-              Complete financial planning strategies designed to grow and protect your assets while minimizing risk and optimizing tax efficiency for high-net-worth individuals.
-            </p>
-            <ul class="text-sm text-gray-400 space-y-2 mb-6">
-              <li class="flex items-center">
-                <span class="w-1.5 h-1.5 bg-green-400 rounded-full mr-3"></span>
-                Portfolio optimization and strategic asset allocation
-              </li>
-              <li class="flex items-center">
-                <span class="w-1.5 h-1.5 bg-green-400 rounded-full mr-3"></span>
-                Risk assessment and comprehensive wealth management
-              </li>
-              <li class="flex items-center">
-                <span class="w-1.5 h-1.5 bg-green-400 rounded-full mr-3"></span>
-                Ongoing performance monitoring and adjustments
-              </li>
-            </ul>
-            <a href="/contact" class="inline-flex items-center text-green-400 hover:text-green-300 font-medium" aria-label="Learn more about comprehensive financial planning">
-              Schedule Consultation
-              <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-              </svg>
-            </a>
-          </div>
-
-          <!-- Service 2: Tax-Efficient Investment Strategies -->
-          <div class="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 hover:border-green-400/30 transition-all duration-500 hover:shadow-2xl hover:shadow-green-400/10 hover-lift fade-in stagger-2">
-            <div class="w-16 h-16 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full flex items-center justify-center mb-6">
-              <picture>
-                <source srcset="/images/icons/tax-efficient-strategies.webp" type="image/webp">
-                <img src="/images/icons/tax-efficient-strategies.png" alt="Tax-Efficient Investment Strategies" class="w-8 h-8" loading="lazy">
-              </picture>
-            </div>
-            <h3 class="text-2xl font-bold mb-4 text-white">Tax-Efficient Investment Strategies</h3>
-            <p class="text-gray-300 mb-6">
-              Advanced tax planning and optimization strategies to minimize your tax burden while maximizing after-tax investment returns through strategic portfolio management.
-            </p>
-            <ul class="text-sm text-gray-400 space-y-2 mb-6">
-              <li class="flex items-center">
-                <span class="w-1.5 h-1.5 bg-blue-400 rounded-full mr-3"></span>
-                Tax-loss harvesting and capital gains optimization
-              </li>
-              <li class="flex items-center">
-                <span class="w-1.5 h-1.5 bg-blue-400 rounded-full mr-3"></span>
-                RRSP/RRIF and TFSA strategic planning
-              </li>
-              <li class="flex items-center">
-                <span class="w-1.5 h-1.5 bg-blue-400 rounded-full mr-3"></span>
-                Corporate tax structure optimization
-              </li>
-            </ul>
-            <a href="/contact" class="inline-flex items-center text-blue-400 hover:text-blue-300 font-medium" aria-label="Learn more about tax-efficient investment strategies">
-              Schedule Consultation
-              <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-              </svg>
-            </a>
-          </div>
-
-          <!-- Service 3: Retirement Income Planning -->
-          <div class="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 hover:border-green-400/30 transition-all duration-500 hover:shadow-2xl hover:shadow-green-400/10 hover-lift fade-in stagger-3">
-            <div class="w-16 h-16 bg-gradient-to-r from-red-400 to-orange-400 rounded-full flex items-center justify-center mb-6">
-              <picture>
-                <source srcset="/images/icons/retirement-income-planning.webp" type="image/webp">
-                <img src="/images/icons/retirement-income-planning.png" alt="Retirement Income Planning" class="w-8 h-8" loading="lazy">
-              </picture>
-            </div>
-            <h3 class="text-2xl font-bold mb-4 text-white">Retirement Income Planning</h3>
-            <p class="text-gray-300 mb-6">
-              Secure your future with personalized retirement income strategies that ensure you can maintain your lifestyle while preserving wealth for future generations.
-            </p>
-            <ul class="text-sm text-gray-400 space-y-2 mb-6">
-              <li class="flex items-center">
-                <span class="w-1.5 h-1.5 bg-red-400 rounded-full mr-3"></span>
-                RRSP/RRIF optimization and withdrawal strategies
-              </li>
-              <li class="flex items-center">
-                <span class="w-1.5 h-1.5 bg-red-400 rounded-full mr-3"></span>
-                CPP/OAS maximization planning
-              </li>
-              <li class="flex items-center">
-                <span class="w-1.5 h-1.5 bg-red-400 rounded-full mr-3"></span>
-                Sustainable income replacement strategies
-              </li>
-            </ul>
-            <a href="/contact" class="inline-flex items-center text-red-400 hover:text-red-300 font-medium" aria-label="Learn more about retirement income planning">
-              Schedule Consultation
-              <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-              </svg>
-            </a>
-          </div>
-
-          <!-- Service 4: Estate Planning Strategies -->
-          <div class="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 hover:border-green-400/30 transition-all duration-500 hover:shadow-2xl hover:shadow-green-400/10 hover-lift fade-in stagger-4">
-            <div class="w-16 h-16 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full flex items-center justify-center mb-6">
-              <picture>
-                <source srcset="/images/icons/estate-planning.webp" type="image/webp">
-                <img src="/images/icons/estate-planning.png" alt="Estate Planning Strategies" class="w-8 h-8" loading="lazy">
-              </picture>
-            </div>
-            <h3 class="text-2xl font-bold mb-4 text-white">Estate Planning Strategies</h3>
-            <p class="text-gray-300 mb-6">
-              Protect your legacy and ensure your assets are distributed according to your wishes with comprehensive estate planning and wealth transfer strategies.
-            </p>
-            <ul class="text-sm text-gray-400 space-y-2 mb-6">
-              <li class="flex items-center">
-                <span class="w-1.5 h-1.5 bg-purple-400 rounded-full mr-3"></span>
-                Will and trust structure optimization
-              </li>
-              <li class="flex items-center">
-                <span class="w-1.5 h-1.5 bg-purple-400 rounded-full mr-3"></span>
-                Tax minimization and wealth transfer strategies
-              </li>
-              <li class="flex items-center">
-                <span class="w-1.5 h-1.5 bg-purple-400 rounded-full mr-3"></span>
-                Beneficiary designations and charitable giving
-              </li>
-            </ul>
-            <a href="/contact" class="inline-flex items-center text-purple-400 hover:text-purple-300 font-medium" aria-label="Learn more about estate planning strategies">
-              Schedule Consultation
-              <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-              </svg>
-            </a>
-          </div>
-
-          <!-- Service 5: Business Succession Planning -->
-          <div class="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 hover:border-green-400/30 transition-all duration-500 hover:shadow-2xl hover:shadow-green-400/10 hover-lift fade-in stagger-1">
-            <div class="w-16 h-16 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full flex items-center justify-center mb-6">
-              <picture>
-                <source srcset="/images/icons/business-succession.webp" type="image/webp">
-                <img src="/images/icons/business-succession.png" alt="Business Succession Planning" class="w-8 h-8" loading="lazy">
               </picture>
             </div>
             <h3 class="text-2xl font-bold mb-4 text-white">Business Succession Planning</h3>
@@ -535,4 +364,140 @@ const seoData = {
   </main>
 
   <Footer />
-</Layout>
+</Layout>Comprehensive Financial Planning</h3>
+            <p class="text-gray-300 mb-6">
+              Complete financial planning strategies designed to grow and protect your assets while minimizing risk and optimizing tax efficiency for high-net-worth individuals.
+            </p>
+            <ul class="text-sm text-gray-400 space-y-2 mb-6">
+              <li class="flex items-center">
+                <span class="w-1.5 h-1.5 bg-green-400 rounded-full mr-3"></span>
+                Portfolio optimization and strategic asset allocation
+              </li>
+              <li class="flex items-center">
+                <span class="w-1.5 h-1.5 bg-green-400 rounded-full mr-3"></span>
+                Risk assessment and comprehensive wealth management
+              </li>
+              <li class="flex items-center">
+                <span class="w-1.5 h-1.5 bg-green-400 rounded-full mr-3"></span>
+                Ongoing performance monitoring and adjustments
+              </li>
+            </ul>
+            <a href="/contact" class="inline-flex items-center text-green-400 hover:text-green-300 font-medium" aria-label="Learn more about comprehensive financial planning">
+              Schedule Consultation
+              <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Service 2: Tax-Efficient Investment Strategies -->
+          <div class="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 hover:border-green-400/30 transition-all duration-500 hover:shadow-2xl hover:shadow-green-400/10 hover-lift fade-in stagger-2">
+            <div class="w-16 h-16 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full flex items-center justify-center mb-6">
+              <picture>
+                <source srcset="/images/icons/tax-efficient-strategies.webp" type="image/webp">
+                <img src="/images/icons/tax-efficient-strategies.png" alt="Tax-Efficient Investment Strategies" class="w-8 h-8" loading="lazy">
+              </picture>
+            </div>
+            <h3 class="text-2xl font-bold mb-4 text-white">Tax-Efficient Investment Strategies</h3>
+            <p class="text-gray-300 mb-6">
+              Advanced tax planning and optimization strategies to minimize your tax burden while maximizing after-tax investment returns through strategic portfolio management.
+            </p>
+            <ul class="text-sm text-gray-400 space-y-2 mb-6">
+              <li class="flex items-center">
+                <span class="w-1.5 h-1.5 bg-blue-400 rounded-full mr-3"></span>
+                Tax-loss harvesting and capital gains optimization
+              </li>
+              <li class="flex items-center">
+                <span class="w-1.5 h-1.5 bg-blue-400 rounded-full mr-3"></span>
+                RRSP/RRIF and TFSA strategic planning
+              </li>
+              <li class="flex items-center">
+                <span class="w-1.5 h-1.5 bg-blue-400 rounded-full mr-3"></span>
+                Corporate tax structure optimization
+              </li>
+            </ul>
+            <a href="/contact" class="inline-flex items-center text-blue-400 hover:text-blue-300 font-medium" aria-label="Learn more about tax-efficient investment strategies">
+              Schedule Consultation
+              <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Service 3: Retirement Income Planning -->
+          <div class="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 hover:border-green-400/30 transition-all duration-500 hover:shadow-2xl hover:shadow-green-400/10 hover-lift fade-in stagger-3">
+            <div class="w-16 h-16 bg-gradient-to-r from-red-400 to-orange-400 rounded-full flex items-center justify-center mb-6">
+              <picture>
+                <source srcset="/images/icons/retirement-income-planning.webp" type="image/webp">
+                <img src="/images/icons/retirement-income-planning.png" alt="Retirement Income Planning" class="w-8 h-8" loading="lazy">
+              </picture>
+            </div>
+            <h3 class="text-2xl font-bold mb-4 text-white">Retirement Income Planning</h3>
+            <p class="text-gray-300 mb-6">
+              Secure your future with personalized retirement income strategies that ensure you can maintain your lifestyle while preserving wealth for future generations.
+            </p>
+            <ul class="text-sm text-gray-400 space-y-2 mb-6">
+              <li class="flex items-center">
+                <span class="w-1.5 h-1.5 bg-red-400 rounded-full mr-3"></span>
+                RRSP/RRIF optimization and withdrawal strategies
+              </li>
+              <li class="flex items-center">
+                <span class="w-1.5 h-1.5 bg-red-400 rounded-full mr-3"></span>
+                CPP/OAS maximization planning
+              </li>
+              <li class="flex items-center">
+                <span class="w-1.5 h-1.5 bg-red-400 rounded-full mr-3"></span>
+                Sustainable income replacement strategies
+              </li>
+            </ul>
+            <a href="/contact" class="inline-flex items-center text-red-400 hover:text-red-300 font-medium" aria-label="Learn more about retirement income planning">
+              Schedule Consultation
+              <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Service 4: Estate Planning Strategies -->
+          <div class="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 hover:border-green-400/30 transition-all duration-500 hover:shadow-2xl hover:shadow-green-400/10 hover-lift fade-in stagger-4">
+            <div class="w-16 h-16 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full flex items-center justify-center mb-6">
+              <picture>
+                <source srcset="/images/icons/estate-planning.webp" type="image/webp">
+                <img src="/images/icons/estate-planning.png" alt="Estate Planning Strategies" class="w-8 h-8" loading="lazy">
+              </picture>
+            </div>
+            <h3 class="text-2xl font-bold mb-4 text-white">Estate Planning Strategies</h3>
+            <p class="text-gray-300 mb-6">
+              Protect your legacy and ensure your assets are distributed according to your wishes with comprehensive estate planning and wealth transfer strategies.
+            </p>
+            <ul class="text-sm text-gray-400 space-y-2 mb-6">
+              <li class="flex items-center">
+                <span class="w-1.5 h-1.5 bg-purple-400 rounded-full mr-3"></span>
+                Will and trust structure optimization
+              </li>
+              <li class="flex items-center">
+                <span class="w-1.5 h-1.5 bg-purple-400 rounded-full mr-3"></span>
+                Tax minimization and wealth transfer strategies
+              </li>
+              <li class="flex items-center">
+                <span class="w-1.5 h-1.5 bg-purple-400 rounded-full mr-3"></span>
+                Beneficiary designations and charitable giving
+              </li>
+            </ul>
+            <a href="/contact" class="inline-flex items-center text-purple-400 hover:text-purple-300 font-medium" aria-label="Learn more about estate planning strategies">
+              Schedule Consultation
+              <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Service 5: Business Succession Planning -->
+          <div class="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 hover:border-green-400/30 transition-all duration-500 hover:shadow-2xl hover:shadow-green-400/10 hover-lift fade-in stagger-1">
+            <div class="w-16 h-16 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full flex items-center justify-center mb-6">
+              <picture>
+                <source srcset="/images/icons/business-succession.webp" type="image/webp">
+                <img src="/images/icons/business-succession.png" alt="Business Succession Planning" class="w-8 h-8" loading="lazy">
+              </picture>
+            </div>
+            <h3 class="text-2xl font-bold mb-4 text-white">
