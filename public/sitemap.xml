@@ -1,113 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
-        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
     
     <!-- Homepage - Highest Priority -->
     <url>
         <loc>https://westgroupfinancial.com/</loc>
-        <lastmod>2024-12-01T00:00:00+00:00</lastmod>
+        <lastmod>2025-01-15T12:00:00+00:00</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
         <image:image>
-            <image:loc>https://westgroupfinancial.com/images/logo.png</image:loc>
-            <image:title>WestGroup Financial Planning Logo</image:title>
-            <image:caption>Fee-only fiduciary financial planning services</image:caption>
+            <image:loc>https://westgroupfinancial.com/images/calculator-hero.webp</image:loc>
+            <image:title>Financial Planning Calculators</image:title>
+            <image:caption>Professional financial planning calculators for retirement, investment, and tax planning</image:caption>
         </image:image>
-    </url>
-
-    <!-- Services Page - High Priority -->
-    <url>
-        <loc>https://westgroupfinancial.com/services/</loc>
-        <lastmod>2024-12-01T00:00:00+00:00</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-    </url>
-
-    <!-- Individual Service Pages -->
-    <url>
-        <loc>https://westgroupfinancial.com/services/comprehensive-financial-planning/</loc>
-        <lastmod>2024-12-01T00:00:00+00:00</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>https://westgroupfinancial.com/services/tax-efficient-investment-strategies/</loc>
-        <lastmod>2024-12-01T00:00:00+00:00</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>https://westgroupfinancial.com/services/retirement-income-planning/</loc>
-        <lastmod>2024-12-01T00:00:00+00:00</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>https://westgroupfinancial.com/services/estate-planning-strategies/</loc>
-        <lastmod>2024-12-01T00:00:00+00:00</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>https://westgroupfinancial.com/services/business-succession-planning/</loc>
-        <lastmod>2024-12-01T00:00:00+00:00</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>https://westgroupfinancial.com/services/investment-portfolio-management/</loc>
-        <lastmod>2024-12-01T00:00:00+00:00</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <!-- Calculator Page - High Priority for User Engagement -->
-    <url>
-        <loc>https://westgroupfinancial.com/calculator/</loc>
-        <lastmod>2024-12-01T00:00:00+00:00</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
     </url>
 
     <!-- Individual Calculator Pages -->
     <url>
         <loc>https://westgroupfinancial.com/calculator/retirement-planning/</loc>
-        <lastmod>2024-12-01T00:00:00+00:00</lastmod>
+        <lastmod>2025-01-15T12:00:00+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 
     <url>
         <loc>https://westgroupfinancial.com/calculator/investment-growth/</loc>
-        <lastmod>2024-12-01T00:00:00+00:00</lastmod>
+        <lastmod>2025-01-15T12:00:00+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 
     <url>
         <loc>https://westgroupfinancial.com/calculator/tax-optimization/</loc>
-        <lastmod>2024-12-01T00:00:00+00:00</lastmod>
+        <lastmod>2025-01-15T12:00:00+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 
     <url>
         <loc>https://westgroupfinancial.com/calculator/net-worth/</loc>
-        <lastmod>2024-12-01T00:00:00+00:00</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- About Page -->
-    <url>
-        <loc>https://westgroupfinancial.com/about/</loc>
-        <lastmod>2024-12-01T00:00:00+00:00</lastmod>
+        <lastmod>2025-01-15T12:00:00+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -115,28 +49,302 @@
     <!-- Contact Page - High Priority for Conversions -->
     <url>
         <loc>https://westgroupfinancial.com/contact/</loc>
-        <lastmod>2024-12-01T00:00:00+00:00</lastmod>
+        <lastmod>2025-01-15T12:00:00+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://westgroupfinancial.com/images/contact-hero.webp</image:loc>
+            <image:title>Contact WestGroup Financial</image:title>
+            <image:caption>Schedule your free financial consultation with our expert team</image:caption>
+        </image:image>
+    </url>
+
+    <!-- Testimonials Page -->
+    <url>
+        <loc>https://westgroupfinancial.com/testimonials/</loc>
+        <lastmod>2025-01-15T12:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <image:image>
+            <image:loc>https://westgroupfinancial.com/images/testimonials-hero.webp</image:loc>
+            <image:title>Client Success Stories</image:title>
+            <image:caption>Real results from families who chose WestGroup Financial's fee-only fiduciary services</image:caption>
+        </image:image>
+    </url>
+
+    <!-- Blog Page -->
+    <url>
+        <loc>https://westgroupfinancial.com/blog/</loc>
+        <lastmod>2025-01-15T12:00:00+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+        <image:image>
+            <image:loc>https://westgroupfinancial.com/images/blog-hero.webp</image:loc>
+            <image:title>Financial Planning Blog</image:title>
+            <image:caption>Expert insights on financial planning, tax strategies, and wealth management</image:caption>
+        </image:image>
+    </url>
+
+    <!-- Blog Posts -->
+    <url>
+        <loc>https://westgroupfinancial.com/blog/diversification-strategies-2025/</loc>
+        <lastmod>2024-12-15T12:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://westgroupfinancial.com/images/blog/diversification-strategies-2025.webp</image:loc>
+            <image:title>Tax-Efficient Diversification Strategies for 2025</image:title>
+            <image:caption>Learn how to build a well-diversified portfolio with tax optimization</image:caption>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://westgroupfinancial.com/blog/retirement-planning-40s/</loc>
+        <lastmod>2024-12-12T12:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://westgroupfinancial.com/images/blog/retirement-planning-40s.webp</image:loc>
+            <image:title>Retirement Income Planning Strategies for Your 40s</image:title>
+            <image:caption>Key strategies to optimize retirement savings and tax planning</image:caption>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://westgroupfinancial.com/blog/year-end-tax-planning/</loc>
+        <lastmod>2024-12-10T12:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://westgroupfinancial.com/images/blog/year-end-tax-planning.webp</image:loc>
+            <image:title>Advanced Year-End Tax Planning Strategies</image:title>
+            <image:caption>Maximize tax efficiency with proven year-end planning techniques</image:caption>
+        </image:image>
     </url>
 
     <!-- Location Pages for Local SEO -->
     <url>
         <loc>https://westgroupfinancial.com/locations/vancouver/</loc>
-        <lastmod>2024-12-01T00:00:00+00:00</lastmod>
+        <lastmod>2025-01-15T12:00:00+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
+        <image:image>
+            <image:loc>https://westgroupfinancial.com/images/locations/vancouver.webp</image:loc>
+            <image:title>Financial Planning Services in Vancouver BC</image:title>
+            <image:caption>Fee-only fiduciary financial planning services for Vancouver families</image:caption>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://westgroupfinancial.com/locations/surrey/</loc>
+        <lastmod>2025-01-15T12:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <image:image>
+            <image:loc>https://westgroupfinancial.com/images/locations/surrey.webp</image:loc>
+            <image:title>Financial Planning Services in Surrey BC</image:title>
+            <image:caption>Expert wealth management and tax planning services in Surrey</image:caption>
+        </image:image>
     </url>
 
     <url>
         <loc>https://westgroupfinancial.com/locations/burnaby/</loc>
-        <lastmod>2024-12-01T00:00:00+00:00</lastmod>
+        <lastmod>2025-01-15T12:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://westgroupfinancial.com/images/locations/burnaby.webp</image:loc>
+            <image:title>Financial Planning Services in Burnaby BC</image:title>
+            <image:caption>Comprehensive financial planning and investment management in Burnaby</image:caption>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://westgroupfinancial.com/locations/richmond/</loc>
+        <lastmod>2025-01-15T12:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://westgroupfinancial.com/images/locations/richmond.webp</image:loc>
+            <image:title>Financial Planning Services in Richmond BC</image:title>
+            <image:caption>Fee-only fiduciary financial advisory services for Richmond residents</image:caption>
+        </image:image>
+    </url>
+
+    <!-- Resources Pages -->
+    <url>
+        <loc>https://westgroupfinancial.com/resources/</loc>
+        <lastmod>2025-01-15T12:00:00+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
 
     <url>
-        <loc>https://westgroupfinancial.com/locations/richmond/</loc>
-        <lastmod>2024-12-01T00:00:00+00:00</lastmod>
+        <loc>https://westgroupfinancial.com/resources/financial-guides/</loc>
+        <lastmod>2025-01-15T12:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <url>
+        <loc>https://westgroupfinancial.com/resources/tax-planning-guide/</loc>
+        <lastmod>2025-01-15T12:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <url>
+        <loc>https://westgroupfinancial.com/resources/retirement-planning-checklist/</loc>
+        <lastmod>2025-01-15T12:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <!-- FAQ Page -->
+    <url>
+        <loc>https://westgroupfinancial.com/faq/</loc>
+        <lastmod>2025-01-15T12:00:00+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+    </url>
+
+    <!-- Legal Pages -->
+    <url>
+        <loc>https://westgroupfinancial.com/privacy/</loc>
+        <lastmod>2025-01-15T12:00:00+00:00</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://westgroupfinancial.com/terms/</loc>
+        <lastmod>2025-01-15T12:00:00+00:00</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://westgroupfinancial.com/disclosure/</loc>
+        <lastmod>2025-01-15T12:00:00+00:00</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+</urlset>
+            <image:loc>https://westgroupfinancial.com/images/logo.webp</image:loc>
+            <image:title>WestGroup Financial Management Logo</image:title>
+            <image:caption>Fee-only fiduciary financial planning services for high-net-worth families in British Columbia</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://westgroupfinancial.com/images/homepage-hero.webp</image:loc>
+            <image:title>WestGroup Financial Management Homepage</image:title>
+            <image:caption>Transform your financial future with expert wealth management and tax-efficient investment strategies</image:caption>
+        </image:image>
+    </url>
+
+    <!-- About Page - High Priority -->
+    <url>
+        <loc>https://westgroupfinancial.com/about/</loc>
+        <lastmod>2025-01-15T12:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://westgroupfinancial.com/images/about-hero.webp</image:loc>
+            <image:title>About WestGroup Financial Management</image:title>
+            <image:caption>Learn about our 25+ years of experience providing fee-only fiduciary financial planning services</image:caption>
+        </image:image>
+    </url>
+
+    <!-- Services Page - High Priority -->
+    <url>
+        <loc>https://westgroupfinancial.com/services/</loc>
+        <lastmod>2025-01-15T12:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://westgroupfinancial.com/images/services-hero.webp</image:loc>
+            <image:title>Comprehensive Financial Planning Services</image:title>
+            <image:caption>Expert financial planning services including wealth management, retirement planning, and tax strategies</image:caption>
+        </image:image>
+    </url>
+
+    <!-- Individual Service Pages -->
+    <url>
+        <loc>https://westgroupfinancial.com/services/comprehensive-financial-planning/</loc>
+        <lastmod>2025-01-15T12:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://westgroupfinancial.com/images/services/comprehensive-planning.webp</image:loc>
+            <image:title>Comprehensive Financial Planning Services</image:title>
+            <image:caption>Complete financial planning strategies for high-net-worth individuals and families</image:caption>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://westgroupfinancial.com/services/tax-efficient-investment-strategies/</loc>
+        <lastmod>2025-01-15T12:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://westgroupfinancial.com/images/services/tax-efficient-strategies.webp</image:loc>
+            <image:title>Tax-Efficient Investment Strategies</image:title>
+            <image:caption>Advanced tax planning to minimize tax burden and maximize after-tax returns</image:caption>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://westgroupfinancial.com/services/retirement-income-planning/</loc>
+        <lastmod>2025-01-15T12:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://westgroupfinancial.com/images/services/retirement-planning.webp</image:loc>
+            <image:title>Retirement Income Planning</image:title>
+            <image:caption>Secure your retirement with personalized income strategies and wealth preservation</image:caption>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://westgroupfinancial.com/services/estate-planning-strategies/</loc>
+        <lastmod>2025-01-15T12:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://westgroupfinancial.com/images/services/estate-planning.webp</image:loc>
+            <image:title>Estate Planning Strategies</image:title>
+            <image:caption>Comprehensive estate planning and wealth transfer strategies</image:caption>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://westgroupfinancial.com/services/business-succession-planning/</loc>
+        <lastmod>2025-01-15T12:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://westgroupfinancial.com/images/services/business-succession.webp</image:loc>
+            <image:title>Business Succession Planning</image:title>
+            <image:caption>Strategic planning for business owners and succession strategies</image:caption>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://westgroupfinancial.com/services/investment-portfolio-management/</loc>
+        <lastmod>2025-01-15T12:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://westgroupfinancial.com/images/services/portfolio-management.webp</image:loc>
+            <image:title>Investment Portfolio Management</image:title>
+            <image:caption>Professional portfolio management and investment oversight for high-net-worth clients</image:caption>
+        </image:image>
+    </url>
+
+    <!-- Calculator Page - High Priority for User Engagement -->
+    <url>
+        <loc>https://westgroupfinancial.com/calculator/</loc>
+        <lastmod>2025-01-15T12:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
