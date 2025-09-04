@@ -1,6 +1,7 @@
 ---
-// Layout.astro - Fixed TypeScript issues
+// Layout.astro - Fixed version with global.css import
 import SEO from '../components/SEO.astro';
+import "../styles/global.css";  <!-- Added import for global.css -->
 
 export interface Props {
   title: string;
