@@ -1,11 +1,54 @@
 ---
+// Testimonials.astro - Fixed SEO prop issues 
 import Layout from '../layouts/Layout.astro';
+
+const seoData = {
+  title: "Client Testimonials - WestGroup Financial Planning Success Stories",
+  description: "Read success stories from WestGroup Financial Planning clients. Discover how our fee-only fiduciary approach has helped families save taxes, build wealth, and secure their financial futures.",
+  keywords: "financial planning testimonials, client success stories, fee-only fiduciary results, wealth management testimonials BC, retirement planning success stories",
+  canonicalURL: "https://westgroupfinancial.com/testimonials/",
+  image: "/images/testimonials-hero.webp",
+  modifiedTime: new Date().toISOString(),
+  section: "Testimonials",
+  tags: ["testimonials", "client success", "financial planning results", "wealth management"],
+  structuredData: {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "WestGroup Financial Planning Client Reviews",
+    "itemListElement": [
+      {
+        "@type": "Review",
+        "position": 1,
+        "author": {
+          "@type": "Person",
+          "name": "David & Maria Chen"
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "reviewBody": "After selling our tech startup, we were facing a massive tax bill. WestGroup's strategic planning not only saved us over $73,000 in the first year but also set up our family for generational wealth transfer.",
+        "itemReviewed": {
+          "@type": "FinancialService",
+          "name": "WestGroup Financial Planning"
+        }
+      }
+    ]
+  }
+};
 ---
 
 <Layout 
-  title="Client Testimonials - WestGroup Financial Planning Success Stories"
-  description="Read success stories from WestGroup Financial Planning clients. Discover how our fee-only fiduciary approach has helped families save taxes, build wealth, and secure their financial futures."
-  canonicalURL="https://westgroupfinancial.com/testimonials/"
+  title={seoData.title}
+  description={seoData.description}
+  keywords={seoData.keywords}
+  canonicalURL={seoData.canonicalURL}
+  image={seoData.image}
+  modifiedTime={seoData.modifiedTime}
+  section={seoData.section}
+  tags={seoData.tags}
+  structuredData={seoData.structuredData}
 >
   <!-- Hero Section -->
   <section class="relative min-h-[70vh] flex items-center justify-center pt-20">
@@ -109,44 +152,6 @@ import Layout from '../layouts/Layout.astro';
             <div class="flex space-x-1 mr-3">
               <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
               <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            </div>
-            <span class="text-sm">Verified Client Since 2021</span>
-          </div>
-        </div>
-
-        <!-- Testimonial 2: Retirement Success -->
-        <div class="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 hover-lift fade-in">
-          <div class="flex items-center mb-6">
-            <div class="w-16 h-16 bg-gradient-to-r from-green-400 to-yellow-400 rounded-full flex items-center justify-center mr-4">
-              <span class="text-2xl font-bold text-slate-900">RK</span>
-            </div>
-            <div>
-              <h3 class="text-xl font-semibold text-white font-['Playfair_Display']">Robert & Karen Williams</h3>
-              <p class="text-gray-400">Retired Executives, Surrey</p>
-            </div>
-          </div>
-          
-          <div class="mb-6 p-4 bg-gradient-to-r from-green-400/10 to-yellow-400/10 rounded-lg border border-green-400/20">
-            <div class="text-center mb-3">
-              <div class="text-2xl font-bold text-green-400 mb-1">$2.4M</div>
-              <div class="text-sm text-gray-300">Retirement portfolio value</div>
-            </div>
-          </div>
-          
-          <blockquote class="text-gray-300 text-lg leading-relaxed mb-6 italic">
-            "We thought we were prepared for retirement, but WestGroup showed us we could do so much better. Their strategic rebalancing and tax-efficient withdrawals have extended our portfolio life by 15 years. We're now living comfortably and still leaving a legacy for our children."
-          </blockquote>
-          
-          <div class="flex items-center text-green-400">
-            <div class="flex space-x-1 mr-3">
-              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             </div>
             <span class="text-sm">Verified Client Since 2018</span>
           </div>
@@ -187,7 +192,7 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <!-- Testimonials Schema Markup -->
-<script type="application/ld+json" is:inline>
+<script is:inline type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "ItemList",
@@ -210,7 +215,63 @@ import Layout from '../layouts/Layout.astro';
         "@type": "FinancialService",
         "name": "WestGroup Financial Planning"
       }
+    },
+    {
+      "@type": "Review",
+      "position": 2,
+      "author": {
+        "@type": "Person",
+        "name": "Robert & Karen Williams"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "reviewBody": "We thought we were prepared for retirement, but WestGroup showed us we could do so much better. Their strategic rebalancing and tax-efficient withdrawals have extended our portfolio life by 15 years.",
+      "itemReviewed": {
+        "@type": "FinancialService",
+        "name": "WestGroup Financial Planning"
+      }
     }
   ]
 }
-</script>
+</script>4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <span class="text-sm">Verified Client Since 2021</span>
+          </div>
+        </div>
+
+        <!-- Testimonial 2: Retirement Success -->
+        <div class="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 hover-lift fade-in">
+          <div class="flex items-center mb-6">
+            <div class="w-16 h-16 bg-gradient-to-r from-green-400 to-yellow-400 rounded-full flex items-center justify-center mr-4">
+              <span class="text-2xl font-bold text-slate-900">RK</span>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold text-white font-['Playfair_Display']">Robert & Karen Williams</h3>
+              <p class="text-gray-400">Retired Executives, Surrey</p>
+            </div>
+          </div>
+          
+          <div class="mb-6 p-4 bg-gradient-to-r from-green-400/10 to-yellow-400/10 rounded-lg border border-green-400/20">
+            <div class="text-center mb-3">
+              <div class="text-2xl font-bold text-green-400 mb-1">$2.4M</div>
+              <div class="text-sm text-gray-300">Retirement portfolio value</div>
+            </div>
+          </div>
+          
+          <blockquote class="text-gray-300 text-lg leading-relaxed mb-6 italic">
+            "We thought we were prepared for retirement, but WestGroup showed us we could do so much better. Their strategic rebalancing and tax-efficient withdrawals have extended our portfolio life by 15 years. We're now living comfortably and still leaving a legacy for our children."
+          </blockquote>
+          
+          <div class="flex items-center text-green-400">
+            <div class="flex space-x-1 mr-3">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5
