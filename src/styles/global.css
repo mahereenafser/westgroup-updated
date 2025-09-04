@@ -1,4 +1,10 @@
 /* src/styles/global.css */
+
+/* Tailwind directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
 /* CSS Reset and Base Styles */
@@ -23,7 +29,7 @@ body {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   line-height: 1.6;
   color: #f8fafc;
-  background-color: #0f172a; /* Dark background for the theme */
+  background-color: #0f172a;
   overflow-x: hidden;
   padding-top: 120px; /* Account for fixed header */
 }
