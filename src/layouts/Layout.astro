@@ -1,6 +1,5 @@
 ---
 import SEO from '../components/SEO.astro';
-<link rel="stylesheet" href="/styles/global.css" />
 
 export interface Props {
   title: string;
@@ -37,6 +36,9 @@ const {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+    <!-- Link the global CSS from the public directory -->
+    <link rel="stylesheet" href="/styles/global.css" />
     
     <SEO 
       title={title}
