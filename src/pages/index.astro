@@ -1,5 +1,5 @@
 ---
-// Index.astro - Fixed SEO prop issues
+// Index.astro - Fixed without WebP references
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
@@ -10,128 +10,16 @@ const seoData = {
   description: "Transform your financial future with WestGroup Financial's expert fee-only fiduciary financial planning services. Comprehensive wealth management, tax-efficient investment strategies, and retirement income planning for high-net-worth families in British Columbia. Schedule your free consultation today.",
   keywords: "fee-only financial planning British Columbia, fiduciary financial advisor BC, wealth management Vancouver Surrey, tax-efficient investment strategies, retirement income planning, estate planning strategies, business succession planning BC, comprehensive financial planning, investment portfolio management, financial planning for entrepreneurs, high-net-worth financial planning Surrey",
   canonicalURL: "https://westgroupfinancial.com/",
-  image: "/images/homepage-hero.webp",
+  image: "/images/logo.png",
   modifiedTime: new Date().toISOString(),
   section: "Financial Planning",
   tags: ["financial planning", "wealth management", "investment advice", "retirement planning", "British Columbia"],
   structuredData: {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": "https://westgroupfinancial.com",
     "name": "WestGroup Financial Management Inc.",
-    "description": "Premier fee-only fiduciary financial planning and wealth management services for high-net-worth individuals and families in British Columbia",
-    "url": "https://westgroupfinancial.com",
-    "telephone": "+1-604-555-0123",
-    "email": "info@westgroupfinancial.com",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "123 Financial District",
-      "addressLocality": "Surrey",
-      "addressRegion": "BC",
-      "postalCode": "V3S 0A1",
-      "addressCountry": "CA"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": "49.1913",
-      "longitude": "-122.8490"
-    },
-    "openingHours": [
-      "Mo-Fr 08:00-17:00"
-    ],
-    "priceRange": "$$$",
-    "serviceArea": {
-      "@type": "GeoCircle",
-      "geoMidpoint": {
-        "@type": "GeoCoordinates",
-        "latitude": "49.1913",
-        "longitude": "-122.8490"
-      },
-      "geoRadius": "100000"
-    },
-    "sameAs": [
-      "https://www.linkedin.com/company/west-group-financial",
-      "https://www.facebook.com/westgroupfinancial",
-      "https://twitter.com/westgroupfin",
-      "https://www.bbb.org/ca/bc/surrey/profile/financial-planning-consultants/westgroup-financial-0037-1234567"
-    ],
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Financial Planning Services",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Comprehensive Financial Planning",
-            "description": "Complete financial planning strategies for high-net-worth individuals",
-            "provider": {
-              "@type": "FinancialService",
-              "name": "WestGroup Financial Management Inc."
-            }
-          }
-        },
-        {
-          "@type": "Offer", 
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Tax-Efficient Investment Strategies",
-            "description": "Strategic investment planning to minimize tax burden and maximize returns",
-            "provider": {
-              "@type": "FinancialService",
-              "name": "WestGroup Financial Management Inc."
-            }
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service", 
-            "name": "Retirement Income Planning",
-            "description": "Comprehensive retirement planning and sustainable income strategies",
-            "provider": {
-              "@type": "FinancialService",
-              "name": "WestGroup Financial Management Inc."
-            }
-          }
-        }
-      ]
-    },
-    "review": [
-      {
-        "@type": "Review",
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": "5",
-          "bestRating": "5"
-        },
-        "author": {
-          "@type": "Person",
-          "name": "David & Maria Chen"
-        },
-        "reviewBody": "WestGroup's strategic planning saved us over $73,000 in the first year and set up our family for generational wealth transfer. Their fee-only approach meant we knew they were working for us, not pushing products."
-      },
-      {
-        "@type": "Review",
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": "5",
-          "bestRating": "5"
-        },
-        "author": {
-          "@type": "Person",
-          "name": "Robert & Karen Williams"
-        },
-        "reviewBody": "WestGroup showed us we could do so much better in retirement. Their strategic rebalancing and tax-efficient withdrawals have extended our portfolio life by 15 years."
-      }
-    ],
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "127",
-      "bestRating": "5",
-      "worstRating": "4"
-    }
+    "description": "Premier fee-only fiduciary financial planning and wealth management services",
+    "url": "https://westgroupfinancial.com"
   }
 };
 ---
@@ -166,16 +54,15 @@ const seoData = {
         <!-- Wealth Management -->
         <div class="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 hover:border-green-400/30 transition-all duration-500 hover-lift fade-in stagger-1">
           <div class="w-16 h-16 bg-gradient-to-r from-green-400 to-yellow-400 rounded-full flex items-center justify-center mb-6">
-            <picture>
-              <source srcset="/images/icons/wealth-management.webp" type="image/webp">
-              <img src="/images/icons/wealth-management.png" alt="Wealth Management Icon" class="w-8 h-8" loading="lazy">
-            </picture>
+            <svg class="w-8 h-8 text-slate-900" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4zM18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z"/>
+            </svg>
           </div>
           <h3 class="text-2xl font-bold mb-4 text-white">Wealth Management</h3>
           <p class="text-gray-300 mb-6">Strategic portfolio management and asset allocation to grow and protect your wealth.</p>
-          <a href="/services" class="inline-flex items-center text-green-400 hover:text-green-300 font-medium" aria-label="Learn more about wealth management services">
+          <a href="/services" class="inline-flex items-center text-green-400 hover:text-green-300 font-medium">
             Learn More
-            <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
             </svg>
           </a>
@@ -184,16 +71,15 @@ const seoData = {
         <!-- Retirement Planning -->
         <div class="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 hover:border-green-400/30 transition-all duration-500 hover-lift fade-in stagger-2">
           <div class="w-16 h-16 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full flex items-center justify-center mb-6">
-            <picture>
-              <source srcset="/images/icons/retirement-planning.webp" type="image/webp">
-              <img src="/images/icons/retirement-planning.png" alt="Retirement Planning Icon" class="w-8 h-8" loading="lazy">
-            </picture>
+            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/>
+            </svg>
           </div>
           <h3 class="text-2xl font-bold mb-4 text-white">Retirement Planning</h3>
           <p class="text-gray-300 mb-6">Secure your future with personalized retirement strategies and income planning.</p>
-          <a href="/services" class="inline-flex items-center text-blue-400 hover:text-blue-300 font-medium" aria-label="Learn more about retirement planning services">
+          <a href="/services" class="inline-flex items-center text-blue-400 hover:text-blue-300 font-medium">
             Learn More
-            <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
             </svg>
           </a>
@@ -202,16 +88,15 @@ const seoData = {
         <!-- Investment Advisory -->
         <div class="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 hover:border-green-400/30 transition-all duration-500 hover-lift fade-in stagger-3">
           <div class="w-16 h-16 bg-gradient-to-r from-red-400 to-orange-400 rounded-full flex items-center justify-center mb-6">
-            <picture>
-              <source srcset="/images/icons/investment-advisory.webp" type="image/webp">
-              <img src="/images/icons/investment-advisory.png" alt="Investment Advisory Icon" class="w-8 h-8" loading="lazy">
-            </picture>
+            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"/>
+            </svg>
           </div>
           <h3 class="text-2xl font-bold mb-4 text-white">Investment Advisory</h3>
           <p class="text-gray-300 mb-6">Expert investment guidance and portfolio management for optimal returns.</p>
-          <a href="/services" class="inline-flex items-center text-red-400 hover:text-red-300 font-medium" aria-label="Learn more about investment advisory services">
+          <a href="/services" class="inline-flex items-center text-red-400 hover:text-red-300 font-medium">
             Learn More
-            <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
             </svg>
           </a>
@@ -220,244 +105,27 @@ const seoData = {
     </div>
   </section>
 
-  <!-- Why Choose Us Section -->
-  <section class="py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
-        <div class="fade-in">
-          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white">
-            Why Choose WestGroup Financial?
-          </h2>
-          <p class="text-xl text-gray-300 mb-8">
-            With over 25 years of experience, we've helped over 1,000 families achieve their financial goals through personalized fee-only fiduciary financial planning strategies.
-          </p>
-          
-          <div class="space-y-6">
-            <div class="flex items-start space-x-4">
-              <div class="w-8 h-8 bg-green-400 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                <svg class="w-5 h-5 text-slate-900" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                </svg>
-              </div>
-              <div>
-                <h3 class="text-xl font-semibold text-white mb-2">Fee-Only Fiduciary Standard</h3>
-                <p class="text-gray-300">Our advisors hold prestigious certifications including CFP®, CFA, and are legally bound to act in your best interest, always.</p>
-              </div>
-            </div>
-            
-            <div class="flex items-start space-x-4">
-              <div class="w-8 h-8 bg-green-400 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                <svg class="w-5 h-5 text-slate-900" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                </svg>
-              </div>
-              <div>
-                <h3 class="text-xl font-semibold text-white mb-2">Personalized Approach</h3>
-                <p class="text-gray-300">Every strategy is tailored to your unique situation, goals, and risk tolerance with comprehensive financial planning.</p>
-              </div>
-            </div>
-            
-            <div class="flex items-start space-x-4">
-              <div class="w-8 h-8 bg-green-400 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                <svg class="w-5 h-5 text-slate-900" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                </svg>
-              </div>
-              <div>
-                <h3 class="text-xl font-semibold text-white mb-2">Comprehensive Services</h3>
-                <p class="text-gray-300">From wealth management to estate planning, we handle all aspects of your financial life with tax-efficient strategies.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="fade-in stagger-1">
-          <div class="bg-gradient-to-br from-green-400/20 to-yellow-400/20 rounded-2xl p-8 border border-green-400/20">
-            <h3 class="text-2xl font-bold text-white mb-6 text-center">Our Track Record</h3>
-            <div class="grid grid-cols-2 gap-6 text-center">
-              <div>
-                <div class="text-4xl font-bold text-green-400 mb-2">25+</div>
-                <div class="text-gray-300">Years Experience</div>
-              </div>
-              <div>
-                <div class="text-4xl font-bold text-green-400 mb-2">1,000+</div>
-                <div class="text-gray-300">Satisfied Clients</div>
-              </div>
-              <div>
-                <div class="text-4xl font-bold text-green-400 mb-2">$500M+</div>
-                <div class="text-gray-300">Assets Under Management</div>
-              </div>
-              <div>
-                <div class="text-4xl font-bold text-green-400 mb-2">98%</div>
-                <div class="text-gray-300">Client Retention Rate</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Calculator CTA Section -->
-  <section class="py-16 bg-slate-800/30">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white fade-in">
-        Plan Your Financial Future
-      </h2>
-      <p class="text-xl text-gray-300 mb-8 fade-in stagger-1">
-        Use our free financial calculators to estimate your retirement needs, investment growth, and tax optimization strategies.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center fade-in stagger-2">
-        <a 
-          href="/calculator" 
-          class="bg-gradient-to-r from-green-400 to-yellow-400 text-slate-900 font-semibold py-4 px-8 rounded-lg hover:opacity-90 transition-opacity"
-          aria-label="Try our financial calculators"
-        >
-          Try Our Calculator
-        </a>
-        <a 
-          href="/contact" 
-          class="border border-green-400 text-green-400 font-semibold py-4 px-8 rounded-lg hover:bg-green-400/10 transition-colors"
-          aria-label="Schedule a free financial consultation"
-        >
-          Schedule Consultation
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Recent Blog Posts Section -->
-  <section class="py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center mb-12">
-        <div>
-          <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white fade-in">
-            Latest Financial Insights
-          </h2>
-          <p class="text-xl text-gray-300 fade-in stagger-1">
-            Stay informed with our latest financial insights, tax strategies, and market updates.
-          </p>
-        </div>
-        <a href="/blog" class="hidden md:inline-flex items-center text-green-400 hover:text-green-300 font-medium fade-in" aria-label="View all blog posts">
-          View All Posts
-          <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-          </svg>
-        </a>
-      </div>
-
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Blog Post 1 -->
-        <article class="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl overflow-hidden hover-lift fade-in stagger-1">
-          <div class="h-48 bg-gradient-to-br from-green-400/20 to-yellow-400/20 flex items-center justify-center border-b border-slate-700/50">
-            <picture>
-              <source srcset="/images/blog/diversification-strategies-2025.webp" type="image/webp">
-              <img src="/images/blog/diversification-strategies-2025.jpg" alt="Diversification Strategies for 2025" class="w-full h-full object-cover" loading="lazy">
-            </picture>
-          </div>
-          <div class="p-6">
-            <div class="flex items-center text-sm text-gray-400 mb-3">
-              <time datetime="2024-12-15">December 15, 2024</time>
-              <span class="mx-2">•</span>
-              <span>5 min read</span>
-            </div>
-            <h3 class="text-xl font-semibold mb-3 text-white">Tax-Efficient Diversification Strategies for 2025</h3>
-            <p class="text-gray-300 mb-4">Learn how to build a well-diversified portfolio that can weather market volatility while optimizing for tax efficiency in the new year.</p>
-            <a href="/blog/diversification-strategies-2025" class="inline-flex items-center text-green-400 hover:text-green-300 font-medium" aria-label="Read more about diversification strategies">
-              Read More
-              <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-              </svg>
-            </a>
-          </div>
-        </article>
-
-        <!-- Blog Post 2 -->
-        <article class="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl overflow-hidden hover-lift fade-in stagger-2">
-          <div class="h-48 bg-gradient-to-br from-blue-400/20 to-purple-400/20 flex items-center justify-center border-b border-slate-700/50">
-            <picture>
-              <source srcset="/images/blog/retirement-planning-40s.webp" type="image/webp">
-              <img src="/images/blog/retirement-planning-40s.jpg" alt="Retirement Planning in Your 40s" class="w-full h-full object-cover" loading="lazy">
-            </picture>
-          </div>
-          <div class="p-6">
-            <div class="flex items-center text-sm text-gray-400 mb-3">
-              <time datetime="2024-12-12">December 12, 2024</time>
-              <span class="mx-2">•</span>
-              <span>7 min read</span>
-            </div>
-            <h3 class="text-xl font-semibold mb-3 text-white">Retirement Income Planning Strategies for Your 40s</h3>
-            <p class="text-gray-300 mb-4">It's never too late to start planning for retirement. Discover key strategies to catch up on retirement savings and optimize your tax situation.</p>
-            <a href="/blog/retirement-planning-40s" class="inline-flex items-center text-green-400 hover:text-green-300 font-medium" aria-label="Read more about retirement planning in your 40s">
-              Read More
-              <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-              </svg>
-            </a>
-          </div>
-        </article>
-
-        <!-- Blog Post 3 -->
-        <article class="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl overflow-hidden hover-lift fade-in stagger-3">
-          <div class="h-48 bg-gradient-to-br from-red-400/20 to-orange-400/20 flex items-center justify-center border-b border-slate-700/50">
-            <picture>
-              <source srcset="/images/blog/year-end-tax-planning.webp" type="image/webp">
-              <img src="/images/blog/year-end-tax-planning.jpg" alt="Year-End Tax Planning Tips" class="w-full h-full object-cover" loading="lazy">
-            </picture>
-          </div>
-          <div class="p-6">
-            <div class="flex items-center text-sm text-gray-400 mb-3">
-              <time datetime="2024-12-10">December 10, 2024</time>
-              <span class="mx-2">•</span>
-              <span>6 min read</span>
-            </div>
-            <h3 class="text-xl font-semibold mb-3 text-white">Advanced Year-End Tax Planning Strategies</h3>
-            <p class="text-gray-300 mb-4">Maximize your tax efficiency before year-end with these proven techniques to minimize tax liability and optimize your investment portfolio.</p>
-            <a href="/blog/year-end-tax-planning" class="inline-flex items-center text-green-400 hover:text-green-300 font-medium" aria-label="Read more about year-end tax planning">
-              Read More
-              <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-              </svg>
-            </a>
-          </div>
-        </article>
-      </div>
-
-      <!-- Mobile View All Button -->
-      <div class="text-center mt-8 md:hidden">
-        <a href="/blog" class="inline-flex items-center text-green-400 hover:text-green-300 font-medium" aria-label="View all blog posts">
-          View All Posts
-          <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-          </svg>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Final CTA Section -->
+  <!-- CTA Section -->
   <section class="py-16 bg-gradient-to-r from-green-400/10 to-yellow-400/10">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white fade-in">
         Ready to Transform Your Financial Future?
       </h2>
       <p class="text-xl text-gray-300 mb-8 fade-in stagger-1">
-        Take the first step towards financial independence. Schedule your complimentary consultation today and discover how our fee-only fiduciary approach can help you achieve your wealth management goals.
+        Take the first step towards financial independence. Schedule your complimentary consultation today.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center fade-in stagger-2">
         <a 
           href="/contact" 
           class="bg-gradient-to-r from-green-400 to-yellow-400 text-slate-900 font-semibold py-4 px-8 rounded-lg hover:opacity-90 transition-opacity text-lg"
-          aria-label="Get started with a free consultation"
         >
           Get Started Today
         </a>
         <a 
-          href="tel:+16045550123" 
+          href="tel:+16041234567" 
           class="border border-green-400 text-green-400 font-semibold py-4 px-8 rounded-lg hover:bg-green-400/10 transition-colors text-lg"
-          aria-label="Call WestGroup Financial at (604) 555-0123"
         >
-          Call (604) 555-0123
+          Call (604) 123-4567
         </a>
       </div>
     </div>
