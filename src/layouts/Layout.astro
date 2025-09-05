@@ -17,7 +17,7 @@ export interface Props {
 
 const { 
   title, 
-  description = "West Group Financial - Expert financial guidance for your future", 
+  description = "WestGroup Financial - Expert financial guidance for your future", 
   image, 
   type = "website",
   keywords,
@@ -36,9 +36,6 @@ const {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-
-    <!-- Link the global CSS from the public directory -->
-    <link rel="stylesheet" href="/styles/global.css" />
     
     <SEO 
       title={title}
@@ -57,58 +54,240 @@ const {
     <!-- Preload critical resources -->
     <link rel="preload" href="/images/logo.png" as="image" />
     
-    <!-- Critical CSS -->
-    <style>
-      .fade-in {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.6s ease, transform 0.6s ease;
+    <!-- Global styles -->
+    <style is:global>
+      @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap');
+      
+      /* Base styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
       }
-      .fade-in.visible {
+      
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 120px;
+      }
+      
+      body {
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        background-color: #0f172a;
+        color: #f8fafc;
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+      
+      /* Typography */
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Playfair Display', Georgia, serif;
+        font-weight: 700;
+        line-height: 1.2;
+      }
+      
+      /* Animations */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-20px); }
+      }
+      
+      @keyframes pulse {
+        0%, 100% { opacity: 0.5; }
+        50% { opacity: 0.8; }
+      }
+      
+      .fade-in {
+        animation: fadeIn 0.8s ease-out forwards;
+      }
+      
+      .animate-float {
+        animation: float 8s ease-in-out infinite;
+      }
+      
+      .animate-pulse {
+        animation: pulse 3s ease-in-out infinite;
+      }
+      
+      /* Stagger delays */
+      .stagger-1 { animation-delay: 0.1s; }
+      .stagger-2 { animation-delay: 0.2s; }
+      .stagger-3 { animation-delay: 0.3s; }
+      .stagger-4 { animation-delay: 0.4s; }
+      
+      /* Hover effects */
+      .hover-lift {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      
+      .hover-lift:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+      }
+      
+      /* Gradient text */
+      .gradient-text {
+        background: linear-gradient(135deg, #eab308, #22c55e);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      
+      /* Glass effect */
+      .glass-effect {
+        background: rgba(30, 41, 59, 0.5);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(71, 85, 105, 0.5);
+      }
+      
+      /* Glow effect */
+      .glow-effect {
+        box-shadow: 0 0 30px rgba(234, 179, 8, 0.2);
+      }
+      
+      /* Button styles */
+      .btn-primary {
+        background: linear-gradient(135deg, #eab308, #22c55e);
+        color: #0f172a;
+        padding: 12px 24px;
+        border-radius: 8px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        display: inline-block;
+        text-decoration: none;
+      }
+      
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(234, 179, 8, 0.3);
+      }
+      
+      .btn-secondary {
+        border: 1px solid #eab308;
+        color: #eab308;
+        padding: 12px 24px;
+        border-radius: 8px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        display: inline-block;
+        text-decoration: none;
+      }
+      
+      .btn-secondary:hover {
+        background: rgba(234, 179, 8, 0.1);
+      }
+      
+      /* Custom utility classes */
+      .container-custom {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 1rem;
+      }
+      
+      .section-padding {
+        padding: 5rem 1rem;
+      }
+      
+      .card {
+        background: rgba(30, 41, 59, 0.5);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(71, 85, 105, 0.5);
+        border-radius: 1rem;
+        padding: 2rem;
+      }
+      
+      .observe-scroll {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s ease;
+      }
+      
+      .observe-scroll.visible {
         opacity: 1;
         transform: translateY(0);
       }
-      .stagger-1 { transition-delay: 0.1s; }
-      .stagger-2 { transition-delay: 0.2s; }
-      .stagger-3 { transition-delay: 0.3s; }
-      .stagger-4 { transition-delay: 0.4s; }
-      .hover-lift {
-        transition: transform 0.3s ease;
-      }
-      .hover-lift:hover {
-        transform: translateY(-2px);
+      
+      /* Primary colors */
+      .text-primary-400 { color: #facc15; }
+      .text-primary-500 { color: #eab308; }
+      .text-primary-600 { color: #ca8a04; }
+      
+      .bg-primary-400 { background-color: #facc15; }
+      .bg-primary-500 { background-color: #eab308; }
+      .bg-primary-600 { background-color: #ca8a04; }
+      
+      /* Accent colors */
+      .text-accent-400 { color: #4ade80; }
+      .text-accent-500 { color: #22c55e; }
+      .text-accent-600 { color: #16a34a; }
+      
+      .bg-accent-400 { background-color: #4ade80; }
+      .bg-accent-500 { background-color: #22c55e; }
+      .bg-accent-600 { background-color: #16a34a; }
+      
+      /* Dark colors */
+      .bg-dark-800 { background-color: #1e293b; }
+      .bg-dark-900 { background-color: #0f172a; }
+      .bg-dark-950 { background-color: #020617; }
+      
+      .text-dark-900 { color: #0f172a; }
+      
+      /* Animations for floating elements */
+      .animate-slide-up {
+        animation: slideUp 0.6s ease-out;
       }
       
-      /* Loading skeleton */
-      .skeleton {
-        background: linear-gradient(90deg, #1e293b 25%, #334155 50%, #1e293b 75%);
-        background-size: 200% 100%;
-        animation: loading 1.5s infinite;
+      .animate-slide-in-right {
+        animation: slideInRight 0.6s ease-out;
       }
-      @keyframes loading {
-        0% { background-position: 200% 0; }
-        100% { background-position: -200% 0; }
+      
+      @keyframes slideUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      @keyframes slideInRight {
+        from {
+          opacity: 0;
+          transform: translateX(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        body {
+          padding-top: 80px;
+        }
+        
+        .section-padding {
+          padding: 3rem 1rem;
+        }
       }
     </style>
   </head>
-  <body class="bg-slate-900 text-white min-h-screen">
+  <body>
     <slot />
     
-    <!-- Performance monitoring -->
-    <script is:inline>
-      // Performance monitoring
-      if ('performance' in window && 'PerformanceObserver' in window) {
-        const observer = new PerformanceObserver((list) => {
-          for (const entry of list.getEntries()) {
-            if (entry.entryType === 'largest-contentful-paint') {
-              console.log('LCP:', entry.startTime);
-            }
-          }
-        });
-        observer.observe({ entryTypes: ['largest-contentful-paint'] });
-      }
-    </script>
-
     <!-- Intersection Observer for animations -->
     <script is:inline>
       document.addEventListener('DOMContentLoaded', function() {
@@ -126,81 +305,21 @@ const {
           });
         }, observerOptions);
 
-        // Observe all fade-in elements
-        document.querySelectorAll('.fade-in').forEach(el => {
+        // Observe all elements with animation classes
+        document.querySelectorAll('.fade-in, .observe-scroll').forEach(el => {
           observer.observe(el);
         });
 
-        // Hover effects for lift elements
+        // Hover effects
         document.querySelectorAll('.hover-lift').forEach(el => {
           el.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-2px) translateZ(0)';
+            this.style.transform = 'translateY(-4px) translateZ(0)';
           });
           
           el.addEventListener('mouseleave', function() {
             this.style.transform = 'translateY(0) translateZ(0)';
           });
         });
-
-        // Lazy loading for images
-        if ('IntersectionObserver' in window) {
-          const imageObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                const img = entry.target;
-                if (img.dataset.src) {
-                  img.src = img.dataset.src;
-                  img.classList.remove('skeleton');
-                  imageObserver.unobserve(img);
-                }
-              }
-            });
-          });
-
-          document.querySelectorAll('img[data-src]').forEach(img => {
-            imageObserver.observe(img);
-          });
-        }
-      });
-    </script>
-
-    <!-- Schema.org structured data -->
-    <script is:inline type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "FinancialService",
-        "name": "West Group Financial",
-        "description": "Expert financial guidance and wealth management services",
-        "url": "https://westgroupfinancial.com",
-        "logo": "https://westgroupfinancial.com/images/logo.png",
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "telephone": "+1-555-123-4567",
-          "contactType": "customer service",
-          "availableLanguage": "English"
-        },
-        "address": {
-          "@type": "PostalAddress",
-          "addressCountry": "US"
-        },
-        "sameAs": [
-          "https://www.linkedin.com/company/west-group-financial",
-          "https://www.facebook.com/westgroupfinancial"
-        ]
-      }
-    </script>
-
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID" is:inline></script>
-    <script is:inline>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
-      gtag('config', 'GA_MEASUREMENT_ID', {
-        page_title: document.title,
-        page_location: window.location.href
       });
     </script>
   </body>
